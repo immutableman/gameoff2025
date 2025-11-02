@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3ysnreep03yt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ainy"]
+radius = 40.0
+
+[node name="Player" type="RigidBody2D"]
+can_sleep = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(194, 135)
+shape = SubResource("CircleShape2D_1ainy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.7
+drag_top_margin = 0.7
+drag_right_margin = 0.7
+drag_bottom_margin = 0.7
+editor_draw_drag_margin = true

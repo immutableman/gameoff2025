@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch7wrmvsdbf6c"]
+[gd_scene load_steps=4 format=3 uid="uid://ch7wrmvsdbf6c"]
 
 [ext_resource type="Script" uid="uid://da4e4hhhpi4wv" path="res://level.gd" id="1_n6hdu"]
+[ext_resource type="PackedScene" uid="uid://b3ysnreep03yt" path="res://player/player.tscn" id="2_vonw3"]
+[ext_resource type="PackedScene" uid="uid://f4f0ew5k46yd" path="res://floor/wave_platform.tscn" id="3_oi3di"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1ainy"]
-radius = 20.0
-
-[node name="Node2D" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_n6hdu")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-can_sleep = false
+[node name="Player" parent="." instance=ExtResource("2_vonw3")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(194, 135)
-shape = SubResource("CircleShape2D_1ainy")
+[node name="WavePlatform" parent="." instance=ExtResource("3_oi3di")]
+position = Vector2(160, -48)
+
+[node name="Line2D" type="Line2D" parent="WavePlatform"]
+position = Vector2(-16, 0)
+points = PackedVector2Array(-88, 128, 104, 128, 360, 64)
