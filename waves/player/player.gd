@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var thrust: float = 400
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +17,7 @@ func _physics_process(delta: float) -> void:
 		force += Vector2.LEFT
 	if Input.is_action_pressed('right'):
 		force += Vector2.RIGHT
-	$RigidBody2D.apply_central_force(force * 200)
+	$RigidBody2D.apply_central_force(force * thrust)
 
 	if force.length() > 0:
 		$%EffortVFX.emitting = true

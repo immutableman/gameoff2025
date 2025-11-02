@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 
 WaveNodes="*res://floor/wave_nodes.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"

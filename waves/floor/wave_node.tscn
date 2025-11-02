@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://byvlc2ux6my4"]
+[gd_scene load_steps=4 format=3 uid="uid://byvlc2ux6my4"]
 
 [ext_resource type="Script" uid="uid://55cierlq6dpe" path="res://floor/wave_node.gd" id="1_jpqwq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j7131"]
 radius = 20.0
+
+[sub_resource type="Gradient" id="Gradient_jpqwq"]
+offsets = PackedFloat32Array(0, 0.18732782, 0.8567493, 1)
+colors = PackedColorArray(0, 0, 0, 0.49803922, 0.6627451, 0.6627451, 0.6627451, 1, 0.85490197, 0.85490197, 0.85490197, 1, 1, 1, 1, 0.45882353)
 
 [node name="WaveNode" type="AnimatableBody2D"]
 script = ExtResource("1_jpqwq")
@@ -12,4 +16,8 @@ script = ExtResource("1_jpqwq")
 shape = SubResource("CircleShape2D_j7131")
 
 [node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(0, 0, 0, -20)
+points = PackedVector2Array(0, 15, 0, -15)
+gradient = SubResource("Gradient_jpqwq")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
