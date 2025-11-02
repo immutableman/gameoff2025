@@ -13,15 +13,18 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	var force = Vector2.ZERO
 	if Input.is_action_pressed('left'):
-		force += Vector2.LEFT * 200
+		force += Vector2.LEFT
 	if Input.is_action_pressed('right'):
-		force += Vector2.RIGHT * 200
-	$RigidBody2D.apply_central_force(force)
+		force += Vector2.RIGHT
+	$RigidBody2D.apply_central_force(force * 200)
 
 	if force.length() > 0:
 		$%EffortVFX.emitting = true
-		$%EffortVFX.initial_velocity_min = -force.x
-		$%EffortVFX.initial_velocity_max = -force.x
-		$%EffortVFX.position.x = -force.x / 5
+		$%EffortVFX.direction = (-force + Vector2.UP / 2).normalized()
+		#$%EffortVFX.initial_velocity_min = -force.x / 2
+		#$%EffortVFX.initial_velocity_max = -force.x
+		$%EffortVFX.angular_velocity_min = -force.x * 360
+		$%EffortVFX.angular_velocity_max = -force.x * 720
+		$%EffortVFX.position.x = -force.x * 30
 	else:
 		$%EffortVFX.emitting = false

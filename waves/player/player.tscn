@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3ysnreep03yt"]
+[gd_scene load_steps=6 format=3 uid="uid://b3ysnreep03yt"]
 
 [ext_resource type="Script" uid="uid://c55bn1a3526mr" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://cv7dsle8bh5fc" path="res://assets/kenney_rolling-ball-assets/PNG/Retina/ball_red_large_alt.png" id="2_rkbax"]
@@ -6,6 +6,10 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ainy"]
 radius = 64.0
+
+[sub_resource type="Gradient" id="Gradient_g1dw6"]
+offsets = PackedFloat32Array(0, 0.3140496, 0.523416, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0.105882354, 1, 1, 0.5921569, 0, 1, 1, 0.5921569, 0, 0)
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_oul6g")
@@ -40,8 +44,12 @@ editor_draw_drag_margin = true
 
 [node name="EffortVFX" type="CPUParticles2D" parent="Friends"]
 unique_name_in_owner = true
-position = Vector2(0, 40)
-emitting = false
+position = Vector2(0, 60)
 texture = ExtResource("3_g1dw6")
-initial_velocity_min = 100.0
-initial_velocity_max = 100.0
+lifetime = 0.33
+direction = Vector2(1, -0.5)
+initial_velocity_min = 341.01
+initial_velocity_max = 537.79
+angular_velocity_min = 720.0
+angular_velocity_max = 720.0
+color_ramp = SubResource("Gradient_g1dw6")
