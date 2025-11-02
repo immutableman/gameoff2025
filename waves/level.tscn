@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch7wrmvsdbf6c"]
+[gd_scene load_steps=6 format=3 uid="uid://ch7wrmvsdbf6c"]
 
 [ext_resource type="Script" uid="uid://da4e4hhhpi4wv" path="res://level.gd" id="1_n6hdu"]
 [ext_resource type="PackedScene" uid="uid://b3ysnreep03yt" path="res://player/player.tscn" id="2_vonw3"]
@@ -9,6 +9,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -464, 160, -230.70068, -113.35004, 230.70068, 113.35004, -136, 64, 0, 0, 0, 0, 192, -64)
 }
 point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi3di"]
+size = Vector2(1816, 114)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_n6hdu")
@@ -21,3 +24,9 @@ position = Vector2(632, 328)
 
 [node name="Path2D" type="Path2D" parent="WavePlatform"]
 curve = SubResource("Curve2D_oi3di")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(580, 600)
+shape = SubResource("RectangleShape2D_oi3di")

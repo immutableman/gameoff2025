@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://f4f0ew5k46yd"]
+[gd_scene load_steps=2 format=3 uid="uid://f4f0ew5k46yd"]
 
 [ext_resource type="Script" uid="uid://efctegrvlr8k" path="res://floor/wave_platform.gd" id="1_lmx8e"]
-[ext_resource type="Texture2D" uid="uid://bprtgo3ixm5op" path="res://icon.svg" id="2_viucb"]
 
 [node name="WavePlatform" type="Node2D"]
 script = ExtResource("1_lmx8e")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_viucb")
