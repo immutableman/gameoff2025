@@ -7,7 +7,6 @@ radius = 40.0
 can_sleep = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(194, 135)
 shape = SubResource("CircleShape2D_1ainy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
