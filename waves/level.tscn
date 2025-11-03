@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch7wrmvsdbf6c"]
+[gd_scene load_steps=7 format=3 uid="uid://ch7wrmvsdbf6c"]
 
 [ext_resource type="Script" uid="uid://da4e4hhhpi4wv" path="res://level.gd" id="1_n6hdu"]
 [ext_resource type="PackedScene" uid="uid://b3ysnreep03yt" path="res://player/player.tscn" id="2_vonw3"]
 [ext_resource type="PackedScene" uid="uid://f4f0ew5k46yd" path="res://floor/wave_platform.tscn" id="3_oi3di"]
+
+[sub_resource type="Curve" id="Curve_oi3di"]
+_data = [Vector2(0.0071599036, 1), 0.0, 0.0, 0, 0, Vector2(0.725537, 0.6350615), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_oi3di"]
 _data = {
@@ -21,6 +25,7 @@ position = Vector2(568, 216)
 
 [node name="WavePlatform" parent="." instance=ExtResource("3_oi3di")]
 position = Vector2(632, 328)
+amplitude_curve = SubResource("Curve_oi3di")
 
 [node name="Path2D" type="Path2D" parent="WavePlatform"]
 curve = SubResource("Curve2D_oi3di")
