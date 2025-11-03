@@ -2,7 +2,7 @@ extends AnimatableBody2D
 
 @export var speed: float = 300
 @export var wavelength: float = 200
-@export var amplitude: float = 20
+@export var amplitude: float = 40
 @export var offset: float = 0
 
 var _elapsed: float = 0
@@ -18,4 +18,3 @@ func _physics_process(delta: float) -> void:
 	var up = transform.basis_xform(Vector2.UP)
 	var wave_delta = amplitude * sin((offset - _elapsed * speed) * PI / wavelength)
 	position = _start_position + up * wave_delta
-	#position.y = _start_position.y + amplitude * sin((_start_position.x - _elapsed * speed) * PI / wavelength)

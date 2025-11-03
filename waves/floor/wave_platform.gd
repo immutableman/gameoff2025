@@ -1,5 +1,10 @@
 extends Node2D
 
+@export var speed: float = 300
+@export var wavelength: float = 200
+@export var amplitude: float = 40
+@export var offset: float = 0
+
 var line: Path2D
 
 var resolution: float = 8
@@ -20,23 +25,9 @@ func _ready() -> void:
 		var node = WaveNodes.alloc_node()
 		node.position = pMid
 		node.rotation = angle
+		node.speed = speed
+		node.wavelength = wavelength
+		node.amplitude = amplitude
 		node.offset = p0.distance_to(pMid) + offset
 		add_child(node)
 		offset += p0.distance_to(p1)
-	
-	#var offset = 0
-	#for i in range(line.points.size() - 1):
-		##create_segment(line.points[i], line.points[i + 1])
-		#offset = create_segment(line.points[i], line.points[i + 1], offset)
-
-#func create_segment(p0: Vector2, p1: Vector2, offset: float) -> float:
-	#var pNext = p0
-	#while pNext.x < p1.x:
-		#var angle = p0.angle_to_point(p1)
-		#var node = WaveNodes.alloc_node()
-		#node.offset = p0.distance_to(pNext) + offset
-		#node.position = pNext
-		#node.rotation = angle
-		#line.add_child(node)
-		#pNext = pNext.move_toward(p1, 8)
-	#return p0.distance_to(pNext)

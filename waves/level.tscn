@@ -6,7 +6,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_oi3di"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -464, 160, -230.70068, -113.35004, 230.70068, 113.35004, -136, 64, 0, 0, 0, 0, 192, -64)
+"points": PackedVector2Array(0, 0, 0, 0, -464, 160, -303.462, 2.8906326, 303.462, -2.8906326, -136, 64, 0, 0, 0, 0, 192, 64)
 }
 point_count = 3
 

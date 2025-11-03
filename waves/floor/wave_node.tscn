@@ -16,7 +16,9 @@ script = ExtResource("1_jpqwq")
 shape = SubResource("CircleShape2D_j7131")
 
 [node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(0, 15, 0, -15)
+position = Vector2(0, 3)
+points = PackedVector2Array(0, 7, 0, -14)
+width = 20.0
 gradient = SubResource("Gradient_jpqwq")
 joint_mode = 2
 begin_cap_mode = 2
