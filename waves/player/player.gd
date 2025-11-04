@@ -6,7 +6,9 @@ func _ready() -> void:
 	EventBus.player_damaged.connect(_on_damaged)
 
 func _on_damaged():
-	pass  # TODO
+	$%EffortVFX.emitting = false
+	$%DeathVFX.emitting = true
+	$RigidBody2D/Sprite2D.modulate = Color.TRANSPARENT
 
 func _physics_process(delta: float) -> void:
 	var force = Vector2.ZERO
