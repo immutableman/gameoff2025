@@ -1,5 +1,13 @@
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	EventBus.player_damaged.connect(_on_damaged)
+
+func _on_damaged() -> void:
+	get_tree().paused = true
+	$DeathTimer.start()
+	await $DeathTimer.timeout
+	
+	if get_tree():
+		get_tree().paused = false
+		get_tree().reload_current_scene()

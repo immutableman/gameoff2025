@@ -52,3 +52,20 @@ position = Vector2(5, 640)
 
 [node name="Path2D" type="Path2D" parent="Spikes"]
 curve = SubResource("Curve2D_1ainy")
+
+[node name="DeathTimer" type="Timer" parent="."]
+process_mode = 3
+one_shot = true
+
+[connection signal="body_entered" from="Spikes/Spike" to="Spikes/Spike" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@157892" to="Spikes/@Area2D@157892" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@157893" to="Spikes/@Area2D@157893" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@157894" to="Spikes/@Area2D@157894" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@157895" to="Spikes/@Area2D@157895" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@157896" to="Spikes/@Area2D@157896" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@157897" to="Spikes/@Area2D@157897" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@157898" to="Spikes/@Area2D@157898" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@157899" to="Spikes/@Area2D@157899" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@157900" to="Spikes/@Area2D@157900" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@157901" to="Spikes/@Area2D@157901" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@157902" to="Spikes/@Area2D@157902" method="_on_body_entered"]
