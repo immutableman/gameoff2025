@@ -2,6 +2,9 @@
 @abstract class_name BasePathPlatform
 extends Node2D
 
+## Offset into the sine wave to start at. Set non-zero to line up with other platforms
+@export var offset: float = 0
+
 var line: Path2D
 var nodes: Array = []
 var cached_xform: Transform2D
@@ -43,13 +46,16 @@ func _render_line():
 		return
 	cached_points = line.curve.get_baked_points()
 	cached_xform = line.transform
+	var next_offset = offset
 	for i in range(cached_points.size() - 1):
 		var p0 = cached_points[i]
 		var p1 = cached_points[i + 1]
 		var pMid = p0.lerp(p1, 0.5)  # create the node at the midpoint
 		var angle = p0.angle_to_point(p1)  # node should face the next point
-		var node = place_node(pMid, angle)
+		var node_offset = p0.distance_to(pMid) + next_offset  # distance along the wave
+		var node = place_node(pMid, angle, node_offset)
 		line.add_child(node)
 		nodes.push_back(node)
+		next_offset += p0.distance_to(p1)
 
-@abstract func place_node(point, angle) -> Node2D
+@abstract func place_node(point: Vector2, angle: float, node_offset: float) -> Node2D
