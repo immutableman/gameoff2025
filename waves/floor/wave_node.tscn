@@ -10,6 +10,7 @@ offsets = PackedFloat32Array(0, 0.18732782, 0.8567493, 1)
 colors = PackedColorArray(0, 0, 0, 0.49803922, 0.6627451, 0.6627451, 0.6627451, 1, 0.85490197, 0.85490197, 0.85490197, 1, 1, 1, 1, 0.45882353)
 
 [node name="WaveNode" type="AnimatableBody2D"]
+collision_layer = 2
 script = ExtResource("1_jpqwq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

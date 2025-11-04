@@ -1,7 +1,5 @@
 @tool
-extends Node2D
-
-@export var spike_scene: PackedScene = preload("res://floor/spike.tscn")
+extends BasePathPlatform
 
 var _line: Path2D
 var _spikes: Array = []
@@ -14,6 +12,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
+		_find_line()
 		if _cached_points != _line.curve.get_baked_points():
 			for spike in _spikes:
 				spike.queue_free()
@@ -21,6 +20,8 @@ func _process(delta: float) -> void:
 			_render_line()
 
 func _find_line():
+	if _line:
+		return
 	for child in get_children():
 		if child is Path2D:
 			_line = child
@@ -32,7 +33,7 @@ func _render_line():
 		var p0 = _cached_points[i]
 		var p1 = _cached_points[i + 1]
 		var pMid = p0.lerp(p1, 0.5)  # create the node at the midpoint
-		var spike = spike_scene.instantiate()
+		var spike = node_scene.instantiate()
 		spike.position = pMid
 		add_child(spike)
 		_spikes.push_back(spike)

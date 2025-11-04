@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://ch7wrmvsdbf6c"]
+[gd_scene load_steps=10 format=4 uid="uid://ch7wrmvsdbf6c"]
 
 [ext_resource type="Script" uid="uid://da4e4hhhpi4wv" path="res://level.gd" id="1_n6hdu"]
 [ext_resource type="TileSet" uid="uid://btf83bb1gq54v" path="res://level/level_tileset.tres" id="2_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://b3ysnreep03yt" path="res://player/player.tscn" id="2_vonw3"]
 [ext_resource type="PackedScene" uid="uid://f4f0ew5k46yd" path="res://floor/wave_platform.tscn" id="3_oi3di"]
 [ext_resource type="PackedScene" uid="uid://cddsuj6uttl2p" path="res://floor/spikes.tscn" id="5_f2txt"]
+[ext_resource type="PackedScene" uid="uid://1p8b83vats1u" path="res://floor/spike.tscn" id="6_1ainy"]
 
 [sub_resource type="Curve" id="Curve_oi3di"]
 _data = [Vector2(0.0071599036, 1), 0.0, 0.0, 0, 0, Vector2(0.725537, 0.6350615), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -19,7 +20,7 @@ point_count = 3
 [sub_resource type="Curve2D" id="Curve2D_1ainy"]
 bake_interval = 64.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1, 2, -219.39217, 6.0210543, 219.39217, -6.0210543, 329, -108, 0, 0, 0, 0, 552, 47)
+"points": PackedVector2Array(0, 0, 0, 0, 1, 2, -219.39217, 6.0210543, 219.39217, -6.0210543, 298, -135, 0, 0, 0, 0, 758, -102)
 }
 point_count = 3
 
@@ -49,6 +50,7 @@ curve = SubResource("Curve2D_oi3di")
 
 [node name="Spikes" parent="." instance=ExtResource("5_f2txt")]
 position = Vector2(137, 579)
+node_scene = ExtResource("6_1ainy")
 
 [node name="Path2D" type="Path2D" parent="Spikes"]
 curve = SubResource("Curve2D_1ainy")
@@ -57,19 +59,23 @@ curve = SubResource("Curve2D_1ainy")
 process_mode = 3
 one_shot = true
 
-[connection signal="body_entered" from="Spikes/@Area2D@172845" to="Spikes/@Area2D@172845" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172846" to="Spikes/@Area2D@172846" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172847" to="Spikes/@Area2D@172847" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172848" to="Spikes/@Area2D@172848" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172849" to="Spikes/@Area2D@172849" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172850" to="Spikes/@Area2D@172850" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172851" to="Spikes/@Area2D@172851" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172852" to="Spikes/@Area2D@172852" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172853" to="Spikes/@Area2D@172853" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172854" to="Spikes/@Area2D@172854" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172855" to="Spikes/@Area2D@172855" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172856" to="Spikes/@Area2D@172856" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172857" to="Spikes/@Area2D@172857" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172858" to="Spikes/@Area2D@172858" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172859" to="Spikes/@Area2D@172859" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@172860" to="Spikes/@Area2D@172860" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211549" to="Spikes/@Area2D@211549" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211550" to="Spikes/@Area2D@211550" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211551" to="Spikes/@Area2D@211551" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211552" to="Spikes/@Area2D@211552" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211553" to="Spikes/@Area2D@211553" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211554" to="Spikes/@Area2D@211554" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211555" to="Spikes/@Area2D@211555" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211556" to="Spikes/@Area2D@211556" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211557" to="Spikes/@Area2D@211557" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211558" to="Spikes/@Area2D@211558" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211559" to="Spikes/@Area2D@211559" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211560" to="Spikes/@Area2D@211560" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211561" to="Spikes/@Area2D@211561" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211562" to="Spikes/@Area2D@211562" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211563" to="Spikes/@Area2D@211563" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211564" to="Spikes/@Area2D@211564" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211565" to="Spikes/@Area2D@211565" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211566" to="Spikes/@Area2D@211566" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211567" to="Spikes/@Area2D@211567" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@211568" to="Spikes/@Area2D@211568" method="_on_body_entered"]
