@@ -1,8 +1,6 @@
 @tool
+@abstract class_name BasePathPlatform
 extends Node2D
-class_name BasePathPlatform
-
-@export var node_scene: PackedScene
 
 var line: Path2D
 var nodes: Array = []
@@ -50,8 +48,8 @@ func _render_line():
 		var p1 = cached_points[i + 1]
 		var pMid = p0.lerp(p1, 0.5)  # create the node at the midpoint
 		var angle = p0.angle_to_point(p1)  # node should face the next point
-		var node = node_scene.instantiate()
-		node.position = pMid
-		node.rotation = angle
+		var node = place_node(pMid, angle)
 		line.add_child(node)
 		nodes.push_back(node)
+
+@abstract func place_node(point, angle) -> Node2D
