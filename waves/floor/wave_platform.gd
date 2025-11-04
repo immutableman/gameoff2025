@@ -10,8 +10,6 @@ extends Node2D
 
 var line: Path2D
 
-var resolution: float = 8
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for child in get_children():

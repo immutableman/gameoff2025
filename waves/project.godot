@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+EventBus="*res://event_bus.gd"
 WaveNodes="*res://floor/wave_nodes.gd"
 
 [display]

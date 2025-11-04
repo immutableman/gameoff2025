@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cddsuj6uttl2p"]
+
+[ext_resource type="Script" uid="uid://ccw7okc6j8qdi" path="res://floor/spikes.gd" id="1_s3cmj"]
+
+[node name="Spikes" type="Node2D"]
+script = ExtResource("1_s3cmj")
