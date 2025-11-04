@@ -19,9 +19,9 @@ point_count = 3
 [sub_resource type="Curve2D" id="Curve2D_1ainy"]
 bake_interval = 64.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 552, 47)
+"points": PackedVector2Array(0, 0, 0, 0, 1, 2, -219.39217, 6.0210543, 219.39217, -6.0210543, 329, -108, 0, 0, 0, 0, 552, 47)
 }
-point_count = 2
+point_count = 3
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_n6hdu")
@@ -48,7 +48,7 @@ amplitude_curve = SubResource("Curve_oi3di")
 curve = SubResource("Curve2D_oi3di")
 
 [node name="Spikes" parent="." instance=ExtResource("5_f2txt")]
-position = Vector2(5, 640)
+position = Vector2(137, 579)
 
 [node name="Path2D" type="Path2D" parent="Spikes"]
 curve = SubResource("Curve2D_1ainy")
@@ -57,15 +57,19 @@ curve = SubResource("Curve2D_1ainy")
 process_mode = 3
 one_shot = true
 
-[connection signal="body_entered" from="Spikes/Spike" to="Spikes/Spike" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@157892" to="Spikes/@Area2D@157892" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@157893" to="Spikes/@Area2D@157893" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@157894" to="Spikes/@Area2D@157894" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@157895" to="Spikes/@Area2D@157895" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@157896" to="Spikes/@Area2D@157896" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@157897" to="Spikes/@Area2D@157897" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@157898" to="Spikes/@Area2D@157898" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@157899" to="Spikes/@Area2D@157899" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@157900" to="Spikes/@Area2D@157900" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@157901" to="Spikes/@Area2D@157901" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/@Area2D@157902" to="Spikes/@Area2D@157902" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172845" to="Spikes/@Area2D@172845" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172846" to="Spikes/@Area2D@172846" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172847" to="Spikes/@Area2D@172847" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172848" to="Spikes/@Area2D@172848" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172849" to="Spikes/@Area2D@172849" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172850" to="Spikes/@Area2D@172850" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172851" to="Spikes/@Area2D@172851" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172852" to="Spikes/@Area2D@172852" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172853" to="Spikes/@Area2D@172853" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172854" to="Spikes/@Area2D@172854" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172855" to="Spikes/@Area2D@172855" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172856" to="Spikes/@Area2D@172856" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172857" to="Spikes/@Area2D@172857" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172858" to="Spikes/@Area2D@172858" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172859" to="Spikes/@Area2D@172859" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/@Area2D@172860" to="Spikes/@Area2D@172860" method="_on_body_entered"]
