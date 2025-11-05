@@ -8,6 +8,7 @@ func _ready() -> void:
 func _on_damaged():
 	$%EffortVFX.emitting = false
 	$%DeathVFX.emitting = true
+	$%DeathSFX.play()
 	$RigidBody2D/Sprite2D.modulate = Color.TRANSPARENT
 
 func _physics_process(delta: float) -> void:

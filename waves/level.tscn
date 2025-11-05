@@ -13,7 +13,7 @@ point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_oi3di"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -464, 160, -99.21959, 17.14269, 99.21959, -17.14269, 89, 195.60953, 0, 0, 0, 0, 192, 64)
+"points": PackedVector2Array(0, 0, 0, 0, -464, 160, -99.21959, 17.14269, 99.21959, -17.14269, 89, 195.60953, 0, 0, 0, 0, 261, 27.791504)
 }
 point_count = 3
 
@@ -38,7 +38,7 @@ tile_map_data = PackedByteArray("AAD+//7/AgAAAAAAAAD+////AgAAAAAAAAD+/wAAAgAAAAA
 tile_set = ExtResource("2_0b4ue")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAEAAIAAAAHAAoAAAA=")
+tile_map_data = PackedByteArray("AAAEAAIAAAAHAAoAAAARAAoAAAAHAAoAAAANAAkAAAAHAAoAAAAVAAsAAAAHAAoAAAAZAAwAAAAHAAoAAAA=")
 tile_set = ExtResource("3_1ainy")
 
 [node name="Player" parent="." instance=ExtResource("2_vonw3")]
