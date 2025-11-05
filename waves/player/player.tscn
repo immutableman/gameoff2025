@@ -17,7 +17,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0.105882354, 1, 1, 0.5921569, 0, 1, 
 offsets = PackedFloat32Array(0, 0.80991733, 0.9944904)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" groups=["player"]]
 script = ExtResource("1_oul6g")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
@@ -47,7 +47,7 @@ editor_draw_drag_margin = true
 [node name="EffortVFX" type="CPUParticles2D" parent="Friends"]
 unique_name_in_owner = true
 process_mode = 3
-position = Vector2(1, 60)
+position = Vector2(0, 60)
 emitting = false
 texture = ExtResource("3_g1dw6")
 lifetime = 0.33
@@ -83,3 +83,7 @@ color_ramp = SubResource("Gradient_qjkh3")
 unique_name_in_owner = true
 process_mode = 3
 stream = ExtResource("5_qjkh3")
+
+[node name="OneWayPoint" type="Node2D" parent="Friends"]
+unique_name_in_owner = true
+position = Vector2(0, 56)

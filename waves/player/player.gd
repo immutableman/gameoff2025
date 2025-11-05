@@ -2,6 +2,9 @@ extends Node2D
 
 @export var thrust: float = 700
 
+func get_player_position() -> Vector2:
+	return $%OneWayPoint.global_position
+
 func _ready() -> void:
 	EventBus.player_damaged.connect(_on_damaged)
 

@@ -9,3 +9,7 @@ func _ready() -> void:
 	# We must move the shape by (size / 2) so its center
 	# lines up with the visual's center.
 	$StaticBody2D/CollisionShape2D.position = size / 2
+
+func _process(delta: float) -> void:
+	var player = get_tree().get_first_node_in_group('player')
+	$StaticBody2D/CollisionShape2D.disabled = (player.get_player_position().y >= global_position.y)
