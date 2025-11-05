@@ -2,8 +2,13 @@ extends Node2D
 
 @export var thrust: float = 700
 
+var external_forces: Vector2 = Vector2.ZERO
+
 func get_player_position() -> Vector2:
 	return $%OneWayPoint.global_position
+
+func add_external_force(force: Vector2):
+	external_forces += force
 
 func _ready() -> void:
 	EventBus.player_damaged.connect(_on_damaged)
@@ -20,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		force += Vector2.LEFT
 	if Input.is_action_pressed('right'):
 		force += Vector2.RIGHT
-	$RigidBody2D.apply_central_force(force * thrust)
+	$RigidBody2D.apply_central_force(force * thrust + external_forces)
 
 	if force.length() > 0:
 		$%EffortVFX.emitting = true
