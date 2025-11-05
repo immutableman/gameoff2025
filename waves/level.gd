@@ -8,6 +8,6 @@ func _on_damaged() -> void:
 	$DeathTimer.start()
 	await $DeathTimer.timeout
 	
-	if get_tree():
+	if is_inside_tree():
 		get_tree().paused = false
 		get_tree().reload_current_scene()
