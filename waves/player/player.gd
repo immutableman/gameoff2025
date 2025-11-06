@@ -3,12 +3,19 @@ extends Node2D
 @export var thrust: float = 700
 
 var external_forces: Vector2 = Vector2.ZERO
+var movers: Array[Node] = []
 
 func get_player_position() -> Vector2:
 	return $%OneWayPoint.global_position
 
 func add_external_force(force: Vector2):
 	external_forces += force
+
+func add_mover(mover: Node) -> void:
+	movers.push_back(mover)
+	
+func remove_mover(mover: Node) -> void:
+	movers.erase(mover)
 
 func _ready() -> void:
 	EventBus.player_damaged.connect(_on_damaged)
@@ -37,7 +44,6 @@ func _physics_process(delta: float) -> void:
 		$%EffortVFX.position.x = -force.x * 30
 	else:
 		$%EffortVFX.emitting = false
-
 
 func _on_rigid_body_2d_body_entered(body: Node) -> void:
 	if body.has_method('on_player_collision'):

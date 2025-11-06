@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3ysnreep03yt"]
+[gd_scene load_steps=10 format=3 uid="uid://b3ysnreep03yt"]
 
 [ext_resource type="Script" uid="uid://c55bn1a3526mr" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://cg86psxfsow3q" path="res://player/player_body.gd" id="2_g6k8r"]
 [ext_resource type="Texture2D" uid="uid://cv7dsle8bh5fc" path="res://assets/kenney_rolling-ball-assets/PNG/Retina/ball_red_large_alt.png" id="2_rkbax"]
 [ext_resource type="Texture2D" uid="uid://ddsehcwb45d0v" path="res://assets/kenney_rolling-ball-assets/PNG/Default/particle_1.png" id="3_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://nvfwy261hre7" path="res://assets/kenney_rolling-ball-assets/PNG/Default/ball_red_small.png" id="4_yw30f"]
@@ -25,6 +26,7 @@ collision_mask = 2
 mass = 0.5
 contact_monitor = true
 max_contacts_reported = 1
+script = ExtResource("2_g6k8r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_1ainy")
