@@ -92,4 +92,8 @@ stream = ExtResource("5_qjkh3")
 unique_name_in_owner = true
 position = Vector2(0, 56)
 
+[node name="RollTouchPoint" type="Node2D" parent="Friends"]
+unique_name_in_owner = true
+position = Vector2(0, -24)
+
 [connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]

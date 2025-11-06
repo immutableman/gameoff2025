@@ -46,7 +46,8 @@ func _physics_process(delta: float) -> void:
 			force += Vector2.LEFT
 		if Input.is_action_pressed('right'):
 			force += Vector2.RIGHT
-	$RigidBody2D.apply_central_force(force * thrust + net_external_force)
+	$RigidBody2D.apply_central_force(net_external_force)
+	$RigidBody2D.apply_force(force * thrust, $%RollTouchPoint.position)
 
 	if force.length() > 0:
 		$%EffortVFX.emitting = true

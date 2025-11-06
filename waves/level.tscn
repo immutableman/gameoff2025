@@ -85,75 +85,75 @@ offset_bottom = 722.0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 512.0
-offset_top = 368.0
-offset_right = 1146.0
-offset_bottom = 375.0
+offset_left = 1056.0
+offset_top = 447.99997
+offset_right = 1690.0
+offset_bottom = 454.99997
 grow_horizontal = 1
 grow_vertical = 1
 rotation = 0.15377109
 
 [node name="SpringPad" parent="." instance=ExtResource("10_8cye3")]
-offset_left = 704.0
-offset_top = 144.0
-offset_right = 928.0
-offset_bottom = 320.0
+offset_left = 1008.0
+offset_top = -32.0
+offset_right = 1232.0
+offset_bottom = 144.0
 rotation = 1.3962634
 
 [node name="ForceZone" parent="." instance=ExtResource("8_km5ld")]
 anchors_preset = 10
 anchor_bottom = 0.0
-offset_left = 128.0
-offset_top = 304.0
-offset_right = 368.0
-offset_bottom = 480.0
+offset_left = -192.0
+offset_top = -16.0
+offset_right = 48.0
+offset_bottom = 160.0
 grow_vertical = 1
 
 [connection signal="body_entered" from="Spikes/Path2D/Spike" to="Spikes/Path2D/Spike" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87191" to="Spikes/Path2D/@Area2D@87191" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87192" to="Spikes/Path2D/@Area2D@87192" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87193" to="Spikes/Path2D/@Area2D@87193" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87194" to="Spikes/Path2D/@Area2D@87194" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87195" to="Spikes/Path2D/@Area2D@87195" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87196" to="Spikes/Path2D/@Area2D@87196" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87197" to="Spikes/Path2D/@Area2D@87197" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87198" to="Spikes/Path2D/@Area2D@87198" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87199" to="Spikes/Path2D/@Area2D@87199" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87200" to="Spikes/Path2D/@Area2D@87200" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87201" to="Spikes/Path2D/@Area2D@87201" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87202" to="Spikes/Path2D/@Area2D@87202" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87203" to="Spikes/Path2D/@Area2D@87203" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87204" to="Spikes/Path2D/@Area2D@87204" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87205" to="Spikes/Path2D/@Area2D@87205" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87206" to="Spikes/Path2D/@Area2D@87206" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87207" to="Spikes/Path2D/@Area2D@87207" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87208" to="Spikes/Path2D/@Area2D@87208" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87209" to="Spikes/Path2D/@Area2D@87209" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87210" to="Spikes/Path2D/@Area2D@87210" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87211" to="Spikes/Path2D/@Area2D@87211" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87212" to="Spikes/Path2D/@Area2D@87212" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87213" to="Spikes/Path2D/@Area2D@87213" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87214" to="Spikes/Path2D/@Area2D@87214" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87215" to="Spikes/Path2D/@Area2D@87215" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87216" to="Spikes/Path2D/@Area2D@87216" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87217" to="Spikes/Path2D/@Area2D@87217" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87218" to="Spikes/Path2D/@Area2D@87218" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87219" to="Spikes/Path2D/@Area2D@87219" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87220" to="Spikes/Path2D/@Area2D@87220" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87221" to="Spikes/Path2D/@Area2D@87221" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87222" to="Spikes/Path2D/@Area2D@87222" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87223" to="Spikes/Path2D/@Area2D@87223" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87224" to="Spikes/Path2D/@Area2D@87224" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87225" to="Spikes/Path2D/@Area2D@87225" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87226" to="Spikes/Path2D/@Area2D@87226" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87227" to="Spikes/Path2D/@Area2D@87227" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87228" to="Spikes/Path2D/@Area2D@87228" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87229" to="Spikes/Path2D/@Area2D@87229" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87230" to="Spikes/Path2D/@Area2D@87230" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87231" to="Spikes/Path2D/@Area2D@87231" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87232" to="Spikes/Path2D/@Area2D@87232" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87233" to="Spikes/Path2D/@Area2D@87233" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87234" to="Spikes/Path2D/@Area2D@87234" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87235" to="Spikes/Path2D/@Area2D@87235" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87236" to="Spikes/Path2D/@Area2D@87236" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@87237" to="Spikes/Path2D/@Area2D@87237" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96482" to="Spikes/Path2D/@Area2D@96482" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96483" to="Spikes/Path2D/@Area2D@96483" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96484" to="Spikes/Path2D/@Area2D@96484" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96485" to="Spikes/Path2D/@Area2D@96485" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96486" to="Spikes/Path2D/@Area2D@96486" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96487" to="Spikes/Path2D/@Area2D@96487" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96488" to="Spikes/Path2D/@Area2D@96488" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96489" to="Spikes/Path2D/@Area2D@96489" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96490" to="Spikes/Path2D/@Area2D@96490" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96491" to="Spikes/Path2D/@Area2D@96491" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96492" to="Spikes/Path2D/@Area2D@96492" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96493" to="Spikes/Path2D/@Area2D@96493" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96494" to="Spikes/Path2D/@Area2D@96494" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96495" to="Spikes/Path2D/@Area2D@96495" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96496" to="Spikes/Path2D/@Area2D@96496" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96497" to="Spikes/Path2D/@Area2D@96497" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96498" to="Spikes/Path2D/@Area2D@96498" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96499" to="Spikes/Path2D/@Area2D@96499" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96500" to="Spikes/Path2D/@Area2D@96500" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96501" to="Spikes/Path2D/@Area2D@96501" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96502" to="Spikes/Path2D/@Area2D@96502" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96503" to="Spikes/Path2D/@Area2D@96503" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96504" to="Spikes/Path2D/@Area2D@96504" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96505" to="Spikes/Path2D/@Area2D@96505" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96506" to="Spikes/Path2D/@Area2D@96506" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96507" to="Spikes/Path2D/@Area2D@96507" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96508" to="Spikes/Path2D/@Area2D@96508" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96509" to="Spikes/Path2D/@Area2D@96509" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96510" to="Spikes/Path2D/@Area2D@96510" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96511" to="Spikes/Path2D/@Area2D@96511" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96512" to="Spikes/Path2D/@Area2D@96512" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96513" to="Spikes/Path2D/@Area2D@96513" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96514" to="Spikes/Path2D/@Area2D@96514" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96515" to="Spikes/Path2D/@Area2D@96515" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96516" to="Spikes/Path2D/@Area2D@96516" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96517" to="Spikes/Path2D/@Area2D@96517" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96518" to="Spikes/Path2D/@Area2D@96518" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96519" to="Spikes/Path2D/@Area2D@96519" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96520" to="Spikes/Path2D/@Area2D@96520" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96521" to="Spikes/Path2D/@Area2D@96521" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96522" to="Spikes/Path2D/@Area2D@96522" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96523" to="Spikes/Path2D/@Area2D@96523" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96524" to="Spikes/Path2D/@Area2D@96524" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96525" to="Spikes/Path2D/@Area2D@96525" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96526" to="Spikes/Path2D/@Area2D@96526" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96527" to="Spikes/Path2D/@Area2D@96527" method="_on_body_entered"]
+[connection signal="body_entered" from="Spikes/Path2D/@Area2D@96528" to="Spikes/Path2D/@Area2D@96528" method="_on_body_entered"]
