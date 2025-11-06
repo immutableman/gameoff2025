@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cddsuj6uttl2p"]
+[gd_scene load_steps=3 format=3 uid="uid://cddsuj6uttl2p"]
 
 [ext_resource type="Script" uid="uid://ccw7okc6j8qdi" path="res://floor/spikes.gd" id="1_s3cmj"]
 
+[sub_resource type="Curve2D" id="Curve2D_s3cmj"]
+resource_local_to_scene = true
+bake_interval = 80.0
+
 [node name="Spikes" type="Node2D"]
 script = ExtResource("1_s3cmj")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_s3cmj")

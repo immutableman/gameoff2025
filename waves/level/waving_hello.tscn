@@ -1,144 +1,22 @@
-[gd_scene load_steps=16 format=4 uid="uid://cfp3rlc0ot0o0"]
+[gd_scene load_steps=12 format=4 uid="uid://cfp3rlc0ot0o0"]
 
 [ext_resource type="Script" uid="uid://da4e4hhhpi4wv" path="res://level.gd" id="1_qkx05"]
 [ext_resource type="TileSet" uid="uid://btf83bb1gq54v" path="res://floor/level_tileset.tres" id="2_phop2"]
 [ext_resource type="TileSet" uid="uid://2p6ck3a16vgb" path="res://floor/platform_tileset.tres" id="3_tel3o"]
 [ext_resource type="PackedScene" uid="uid://b3ysnreep03yt" path="res://player/player.tscn" id="4_iyoqu"]
 [ext_resource type="PackedScene" uid="uid://f4f0ew5k46yd" path="res://floor/wave_platform.tscn" id="5_8v53v"]
-[ext_resource type="PackedScene" uid="uid://cddsuj6uttl2p" path="res://floor/spikes.tscn" id="6_4m8vx"]
 [ext_resource type="PackedScene" uid="uid://s2s11kocr8bd" path="res://floor/one_way_platform.tscn" id="7_w5305"]
 [ext_resource type="PackedScene" uid="uid://bw4vtclnulclg" path="res://floor/bounce_pad.tscn" id="8_ggqv0"]
 [ext_resource type="PackedScene" uid="uid://eqaxx4xo3kum" path="res://floor/spring_pad.tscn" id="9_jvfj6"]
 [ext_resource type="PackedScene" uid="uid://ksu1roi6pr2d" path="res://floor/force_zone.tscn" id="10_m33ae"]
 
-[sub_resource type="GDScript" id="GDScript_qkx05"]
-script/source = "@tool
-extends BasePathPlatform
-
-@export var speed: float = 300
-@export var wavelength: float = 200
-@export var amplitude: float = 40
-@export var amplitude_curve: Curve
-
-func place_node(point: Vector2, angle: float, node_offset: float) -> Node2D:
-	var node = WaveNodes.alloc_node()
-	node.position = point
-	node.rotation = angle
-	node.speed = speed
-	node.wavelength = wavelength
-	node.offset = node_offset
-
-	var t = offset / line.curve.get_baked_length()
-	if amplitude_curve:
-		node.amplitude = amplitude * amplitude_curve.sample(t)
-	else:
-		node.amplitude = amplitude
-	return node
-
-
-#var line: Path2D
-#
-## Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#for child in get_children():
-		#if child is Path2D:
-			#line = child
-#
-	#var length = line.curve.get_baked_length()
-#
-	#var points = line.curve.get_baked_points()
-	#for i in range(points.size() - 1):
-		#var p0 = points[i]
-		#var p1 = points[i + 1]
-		#var pMid = p0.lerp(p1, 0.5)  # create the node at the midpoint
-		#var angle = p0.angle_to_point(p1)  # node should face the next point
-		#var node = WaveNodes.alloc_node()
-		#node.position = pMid
-		#node.rotation = angle
-		#node.speed = speed
-		#node.wavelength = wavelength
-		#var t = offset / length
-		#if amplitude_curve:
-			#node.amplitude = amplitude * amplitude_curve.sample(t)
-		#else:
-			#node.amplitude = amplitude
-		#node.offset = p0.distance_to(pMid) + offset  # distance along the wave
-		#add_child(node)
-		#offset += p0.distance_to(p1)  # update the cumulative offset
-"
+[sub_resource type="Curve2D" id="Curve2D_qkx05"]
+resource_local_to_scene = true
 
 [sub_resource type="Curve2D" id="Curve2D_phop2"]
+resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -464, 160, -99.21959, 17.14269, 99.21959, -17.14269, 89, 195.60953, 0, 0, 0, 0, 261, 27.791504)
-}
-point_count = 3
-
-[sub_resource type="GDScript" id="GDScript_tel3o"]
-script/source = "@tool
-extends BasePathPlatform
-
-@export var speed: float = 300
-@export var wavelength: float = 200
-@export var amplitude: float = 40
-@export var amplitude_curve: Curve
-
-func place_node(point: Vector2, angle: float, node_offset: float) -> Node2D:
-	var node = WaveNodes.alloc_node()
-	node.position = point
-	node.rotation = angle
-	node.speed = speed
-	node.wavelength = wavelength
-	node.offset = node_offset
-
-	var t = offset / line.curve.get_baked_length()
-	if amplitude_curve:
-		node.amplitude = amplitude * amplitude_curve.sample(t)
-	else:
-		node.amplitude = amplitude
-	return node
-
-
-#var line: Path2D
-#
-## Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#for child in get_children():
-		#if child is Path2D:
-			#line = child
-#
-	#var length = line.curve.get_baked_length()
-#
-	#var points = line.curve.get_baked_points()
-	#for i in range(points.size() - 1):
-		#var p0 = points[i]
-		#var p1 = points[i + 1]
-		#var pMid = p0.lerp(p1, 0.5)  # create the node at the midpoint
-		#var angle = p0.angle_to_point(p1)  # node should face the next point
-		#var node = WaveNodes.alloc_node()
-		#node.position = pMid
-		#node.rotation = angle
-		#node.speed = speed
-		#node.wavelength = wavelength
-		#var t = offset / length
-		#if amplitude_curve:
-			#node.amplitude = amplitude * amplitude_curve.sample(t)
-		#else:
-			#node.amplitude = amplitude
-		#node.offset = p0.distance_to(pMid) + offset  # distance along the wave
-		#add_child(node)
-		#offset += p0.distance_to(p1)  # update the cumulative offset
-"
-
-[sub_resource type="Curve2D" id="Curve2D_iyoqu"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -464, 160, -99.21959, 17.14269, 99.21959, -17.14269, -182, 70, 0, 0, 0, 0, 192, 64)
-}
-point_count = 3
-
-[sub_resource type="Curve2D" id="Curve2D_8v53v"]
-bake_interval = 84.0
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -498, -30, -153.0892, 27.8784, 153.0892, -27.8784, 163, -102, -248.43217, -0.43227005, 248.43217, 0.43227005, 621, 48, 0, 0, 0, 0, 2486, -57)
+"points": PackedVector2Array(0, 0, 0, 0, 128, 16, 0, 0, 0, 0, 512, -64, 0, 0, 0, 0, 672, 80, 0, 0, 0, 0, 1008, -176)
 }
 point_count = 4
 
@@ -155,29 +33,6 @@ tile_set = ExtResource("3_tel3o")
 
 [node name="Player" parent="." instance=ExtResource("4_iyoqu")]
 position = Vector2(568, 216)
-
-[node name="A1" parent="." instance=ExtResource("5_8v53v")]
-position = Vector2(972, 482)
-script = SubResource("GDScript_qkx05")
-
-[node name="Path2D" type="Path2D" parent="A1"]
-position = Vector2(20, -21)
-scale = Vector2(1, 0.93553734)
-curve = SubResource("Curve2D_phop2")
-
-[node name="A2" parent="." instance=ExtResource("5_8v53v")]
-position = Vector2(1480, 200)
-script = SubResource("GDScript_tel3o")
-
-[node name="Path2D" type="Path2D" parent="A2"]
-curve = SubResource("Curve2D_iyoqu")
-
-[node name="Spikes" parent="." instance=ExtResource("6_4m8vx")]
-position = Vector2(173, 733)
-
-[node name="Path2D" type="Path2D" parent="Spikes"]
-position = Vector2(47, 6)
-curve = SubResource("Curve2D_8v53v")
 
 [node name="DeathTimer" type="Timer" parent="."]
 process_mode = 3
@@ -221,51 +76,23 @@ offset_bottom = 160.0
 grow_vertical = 1
 metadata/_edit_use_anchors_ = true
 
-[connection signal="body_entered" from="Spikes/Path2D/Spike" to="Spikes/Path2D/Spike" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138183" to="Spikes/Path2D/@Area2D@138183" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138184" to="Spikes/Path2D/@Area2D@138184" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138185" to="Spikes/Path2D/@Area2D@138185" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138186" to="Spikes/Path2D/@Area2D@138186" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138187" to="Spikes/Path2D/@Area2D@138187" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138188" to="Spikes/Path2D/@Area2D@138188" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138189" to="Spikes/Path2D/@Area2D@138189" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138190" to="Spikes/Path2D/@Area2D@138190" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138191" to="Spikes/Path2D/@Area2D@138191" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138192" to="Spikes/Path2D/@Area2D@138192" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138193" to="Spikes/Path2D/@Area2D@138193" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138194" to="Spikes/Path2D/@Area2D@138194" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138195" to="Spikes/Path2D/@Area2D@138195" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138196" to="Spikes/Path2D/@Area2D@138196" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138197" to="Spikes/Path2D/@Area2D@138197" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138198" to="Spikes/Path2D/@Area2D@138198" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138199" to="Spikes/Path2D/@Area2D@138199" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138200" to="Spikes/Path2D/@Area2D@138200" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138201" to="Spikes/Path2D/@Area2D@138201" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138202" to="Spikes/Path2D/@Area2D@138202" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138203" to="Spikes/Path2D/@Area2D@138203" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138204" to="Spikes/Path2D/@Area2D@138204" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138205" to="Spikes/Path2D/@Area2D@138205" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138206" to="Spikes/Path2D/@Area2D@138206" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138207" to="Spikes/Path2D/@Area2D@138207" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138208" to="Spikes/Path2D/@Area2D@138208" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138209" to="Spikes/Path2D/@Area2D@138209" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138210" to="Spikes/Path2D/@Area2D@138210" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138211" to="Spikes/Path2D/@Area2D@138211" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138212" to="Spikes/Path2D/@Area2D@138212" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138213" to="Spikes/Path2D/@Area2D@138213" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138214" to="Spikes/Path2D/@Area2D@138214" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138215" to="Spikes/Path2D/@Area2D@138215" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138216" to="Spikes/Path2D/@Area2D@138216" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138217" to="Spikes/Path2D/@Area2D@138217" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138218" to="Spikes/Path2D/@Area2D@138218" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138219" to="Spikes/Path2D/@Area2D@138219" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138220" to="Spikes/Path2D/@Area2D@138220" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138221" to="Spikes/Path2D/@Area2D@138221" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138222" to="Spikes/Path2D/@Area2D@138222" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138223" to="Spikes/Path2D/@Area2D@138223" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138224" to="Spikes/Path2D/@Area2D@138224" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138225" to="Spikes/Path2D/@Area2D@138225" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138226" to="Spikes/Path2D/@Area2D@138226" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138227" to="Spikes/Path2D/@Area2D@138227" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138228" to="Spikes/Path2D/@Area2D@138228" method="_on_body_entered"]
-[connection signal="body_entered" from="Spikes/Path2D/@Area2D@138229" to="Spikes/Path2D/@Area2D@138229" method="_on_body_entered"]
+[node name="WavePlatform3" parent="." instance=ExtResource("5_8v53v")]
+position = Vector2(960, 160)
+
+[node name="Path2D" parent="WavePlatform3" index="0"]
+curve = SubResource("Curve2D_qkx05")
+
+[node name="WavePlatform" parent="." instance=ExtResource("5_8v53v")]
+
+[node name="Path2D" parent="WavePlatform" index="0"]
+curve = SubResource("Curve2D_phop2")
+
+[node name="WavePlatform2" parent="." instance=ExtResource("5_8v53v")]
+position = Vector2(960, 160)
+
+[node name="Path2D" parent="WavePlatform2" index="0"]
+curve = SubResource("Curve2D_phop2")
+
+[editable path="WavePlatform3"]
+[editable path="WavePlatform"]
+[editable path="WavePlatform2"]

@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://f4f0ew5k46yd"]
+[gd_scene load_steps=3 format=3 uid="uid://f4f0ew5k46yd"]
 
 [ext_resource type="Script" uid="uid://efctegrvlr8k" path="res://floor/wave_platform.gd" id="1_lmx8e"]
 
+[sub_resource type="Curve2D" id="Curve2D_lmx8e"]
+resource_local_to_scene = true
+
 [node name="WavePlatform" type="Node2D"]
 script = ExtResource("1_lmx8e")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_lmx8e")
