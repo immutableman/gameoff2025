@@ -41,10 +41,11 @@ func _on_damaged():
 
 func _physics_process(delta: float) -> void:
 	var force = Vector2.ZERO
-	if Input.is_action_pressed('left'):
-		force += Vector2.LEFT
-	if Input.is_action_pressed('right'):
-		force += Vector2.RIGHT
+	if movers.size() == 0:
+		if Input.is_action_pressed('left'):
+			force += Vector2.LEFT
+		if Input.is_action_pressed('right'):
+			force += Vector2.RIGHT
 	$RigidBody2D.apply_central_force(force * thrust + net_external_force)
 
 	if force.length() > 0:
