@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://8u4b4o80hs0n"]
+
+[ext_resource type="Script" uid="uid://f88v3bdewv6q" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+[ext_resource type="Script" uid="uid://dlgbxo63gfwag" path="res://main_menu/level_data.gd" id="2_d3a7t"]
+[ext_resource type="PackedScene" uid="uid://ch7wrmvsdbf6c" path="res://level.tscn" id="3_3shxk"]
+[ext_resource type="PackedScene" uid="uid://qh23budy3ucv" path="res://main_menu/level_button.tscn" id="4_bws42"]
+
+[sub_resource type="Resource" id="Resource_3shxk"]
+script = ExtResource("2_d3a7t")
+display_name = "Waving Hello"
+scene = ExtResource("3_3shxk")
+metadata/_custom_type_script = "uid://dlgbxo63gfwag"
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oa53l")
+level_list = Array[ExtResource("2_d3a7t")]([SubResource("Resource_3shxk")])
+
+[node name="Levels" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LevelButton" parent="Levels" instance=ExtResource("4_bws42")]
+layout_mode = 2
