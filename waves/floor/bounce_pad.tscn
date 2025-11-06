@@ -33,7 +33,14 @@ patch_margin_right = 16
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_6wq6a")
 freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+linear_damp_mode = 1
+angular_damp_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_0lvd7")
 one_way_collision = true
+
+[connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]

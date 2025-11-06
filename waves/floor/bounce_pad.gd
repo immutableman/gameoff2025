@@ -13,3 +13,6 @@ func _ready() -> void:
 #func _process(delta: float) -> void:
 	#var player = get_tree().get_first_node_in_group('player')
 	#$RigidBody2D/CollisionShape2D.disabled = (player.get_player_position().y >= global_position.y)
+
+#func _on_rigid_body_2d_body_entered(body: Node) -> void:
+	#body.apply_impulse(Vector2.UP * 100)

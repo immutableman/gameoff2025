@@ -11,5 +11,6 @@ func _ready() -> void:
 	$StaticBody2D/CollisionShape2D.position = size / 2
 
 func _process(delta: float) -> void:
-	var player = get_tree().get_first_node_in_group('player')
-	$StaticBody2D/CollisionShape2D.disabled = (player.get_player_position().y >= global_position.y)
+	if rotation == 0:
+		var player = get_tree().get_first_node_in_group('player')
+		$StaticBody2D/CollisionShape2D.disabled = (player.get_player_position().y >= global_position.y)

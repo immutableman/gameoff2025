@@ -23,6 +23,8 @@ script = ExtResource("1_oul6g")
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_mask = 2
 mass = 0.5
+contact_monitor = true
+max_contacts_reported = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_1ainy")
@@ -87,3 +89,5 @@ stream = ExtResource("5_qjkh3")
 [node name="OneWayPoint" type="Node2D" parent="Friends"]
 unique_name_in_owner = true
 position = Vector2(0, 56)
+
+[connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]
