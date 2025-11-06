@@ -24,5 +24,4 @@ func calc_mover_velocity(velocity: Vector2, delta: float) -> Vector2:
 	var target_velocity = speed * Vector2.UP.rotated(rotation)
 	var elapsed = $LockoutTimer.wait_time - $LockoutTimer.time_left
 	var t = clamp(elapsed / seconds_to_max_speed, 0, 1)
-	print(t)
 	return velocity.lerp(target_velocity, t)
