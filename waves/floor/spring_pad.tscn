@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://eqaxx4xo3kum"]
 
 [ext_resource type="Script" uid="uid://cg67ivk15ml4d" path="res://floor/spring_pad.gd" id="1_nobkl"]
-[ext_resource type="Material" uid="uid://ctnwjr8071jcc" path="res://floor/scroll_material.tres" id="2_56v1u"]
+[ext_resource type="Texture2D" uid="uid://ee11ty2dkbvr" path="res://assets/kenney_rolling-ball-assets/PNG/Default/button_grey.png" id="2_63re5"]
 [ext_resource type="Texture2D" uid="uid://dfl7fuoo6figg" path="res://assets/Arrow.png" id="3_mtovr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nobkl"]
@@ -15,17 +15,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nobkl")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_repeat = 2
-material = ExtResource("2_56v1u")
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = 8.0
+offset_bottom = 67.0
 grow_horizontal = 2
-grow_vertical = 2
+texture = ExtResource("2_63re5")
+patch_margin_left = 16
+patch_margin_right = 16
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 11.0
+offset_bottom = 75.0
+grow_horizontal = 2
 texture = ExtResource("3_mtovr")
-stretch_mode = 1
+stretch_mode = 3
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

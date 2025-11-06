@@ -1,6 +1,6 @@
 extends Control
 
-@export var speed: float = 800
+@export var speed: float = 1000
 
 func _ready() -> void:
 	$Area2D/CollisionShape2D.shape.size = size
