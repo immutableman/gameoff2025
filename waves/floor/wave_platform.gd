@@ -6,6 +6,11 @@ extends BasePathPlatform
 @export var amplitude: float = 40
 @export var amplitude_curve: Curve
 
+func _ready() -> void:
+	super._ready()
+	if Engine.is_editor_hint() and amplitude_curve:
+		amplitude_curve = amplitude_curve.duplicate(true)
+
 func place_node(point: Vector2, angle: float, node_offset: float) -> Node2D:
 	var node = WaveNodes.alloc_node()
 	node.position = point
@@ -14,7 +19,7 @@ func place_node(point: Vector2, angle: float, node_offset: float) -> Node2D:
 	node.wavelength = wavelength
 	node.offset = node_offset
 
-	var t = offset / line.curve.get_baked_length()
+	var t = node_offset / line.curve.get_baked_length()
 	if amplitude_curve:
 		node.amplitude = amplitude * amplitude_curve.sample(t)
 	else:

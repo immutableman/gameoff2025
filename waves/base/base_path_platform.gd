@@ -13,6 +13,11 @@ var cached_points: PackedVector2Array
 func _ready() -> void:
 	if not Engine.is_editor_hint():
 		_render_line()
+	else:
+		_find_line()
+		for child in line.get_children():
+			child.queue_free()
+		line.curve = line.curve.duplicate()
 
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
