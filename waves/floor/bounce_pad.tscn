@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw4vtclnulclg"]
+
+[ext_resource type="Script" uid="uid://dpi0cubghph5b" path="res://floor/bounce_pad.gd" id="1_6wq6a"]
+[ext_resource type="Texture2D" uid="uid://cj5v6foyn401" path="res://assets/kenney_rolling-ball-assets/PNG/Retina/button_yellow.png" id="2_6wq6a"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6wq6a"]
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lvd7"]
+
+[node name="BouncePad" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6wq6a")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -8.0
+offset_right = 8.0
+offset_bottom = 128.0
+grow_horizontal = 2
+texture = ExtResource("2_6wq6a")
+patch_margin_left = 16
+patch_margin_right = 16
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_6wq6a")
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_0lvd7")
+one_way_collision = true
