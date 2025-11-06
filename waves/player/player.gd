@@ -2,14 +2,27 @@ extends Node2D
 
 @export var thrust: float = 700
 
-var external_forces: Vector2 = Vector2.ZERO
+var external_forces: Dictionary[Node, Vector2] = {}
+var net_external_force: Vector2 = Vector2.ZERO
 var movers: Array[Node] = []
 
 func get_player_position() -> Vector2:
 	return $%OneWayPoint.global_position
 
-func add_external_force(force: Vector2):
-	external_forces += force
+func add_external_force(source: Node, force: Vector2):
+	if source in external_forces:
+		remove_external_force(source)
+	external_forces[source] = force
+	net_external_force += force
+	$RigidBody2D.gravity_scale = 0
+
+func remove_external_force(source: Node):
+	external_forces.erase(source)
+	net_external_force = Vector2.ZERO
+	$RigidBody2D.gravity_scale = 1
+	for remaining_source in external_forces:
+		net_external_force += external_forces[remaining_source]
+		$RigidBody2D.gravity_scale = 0
 
 func add_mover(mover: Node) -> void:
 	movers.push_back(mover)
@@ -32,7 +45,7 @@ func _physics_process(delta: float) -> void:
 		force += Vector2.LEFT
 	if Input.is_action_pressed('right'):
 		force += Vector2.RIGHT
-	$RigidBody2D.apply_central_force(force * thrust + external_forces)
+	$RigidBody2D.apply_central_force(force * thrust + net_external_force)
 
 	if force.length() > 0:
 		$%EffortVFX.emitting = true

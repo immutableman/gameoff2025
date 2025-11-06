@@ -1,6 +1,7 @@
 extends Control
 
-@export var speed: float = 800
+@export var thrust: float = 500
+
 
 func _ready() -> void:
 	$Area2D/CollisionShape2D.shape.size = size
@@ -12,16 +13,9 @@ func _ready() -> void:
 	# lines up with the visual's center.
 	$Area2D/CollisionShape2D.position = size / 2
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	body.owner.add_mover(self)
+	body.owner.add_external_force(self, thrust * Vector2.UP.rotated(rotation))
 
-func _on_area_2d_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	body.owner.remove_mover(self)
 
-func lerp(velocity: Vector2, delta: float) -> Vector2:
-	var target_velocity = speed * Vector2.UP.rotated(rotation)
-	return velocity.lerp(
-		target_velocity,
-		clamp(speed * delta, 0, 1) # 'state.step' is the delta time here
-	)
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	body.owner.remove_external_force(self)
