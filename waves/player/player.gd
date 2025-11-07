@@ -30,6 +30,17 @@ func add_mover(mover: Node) -> void:
 func remove_mover(mover: Node) -> void:
 	movers.erase(mover)
 
+func exit_level(endPos: Vector2) -> void:
+	$RigidBody2D.set_deferred('freeze', true)
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT).tween_property($RigidBody2D, 'global_position', endPos, 0.5)
+	$Friends/VictorySFX.play()
+	await tween.finished
+	$EndTimer.start()
+	await $EndTimer.timeout
+	get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
+
+
 func _ready() -> void:
 	EventBus.player_damaged.connect(_on_damaged)
 
@@ -41,7 +52,7 @@ func _on_damaged():
 
 func _physics_process(delta: float) -> void:
 	var force = Vector2.ZERO
-	if movers.size() == 0:
+	if movers.size() == 0 and not $RigidBody2D.freeze:
 		if Input.is_action_pressed('left'):
 			force += Vector2.LEFT
 		if Input.is_action_pressed('right'):

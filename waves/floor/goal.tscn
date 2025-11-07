@@ -16,8 +16,4 @@ shape = SubResource("CircleShape2D_smugm")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_smugm")
 
-[node name="EndTimer" type="Timer" parent="."]
-wait_time = 1.5
-one_shot = true
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
