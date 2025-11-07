@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp66wbknaaeu6"]
+
+[ext_resource type="Script" uid="uid://ycycypame2el" path="res://floor/damage_on_touch.gd" id="1_yo6ls"]
+[ext_resource type="Shader" uid="uid://dq8n03c6lg8si" path="res://floor/saw.gdshader" id="2_ams22"]
+[ext_resource type="Texture2D" uid="uid://3od326deewuu" path="res://assets/Saw.png" id="2_yo6ls"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4n6n6"]
+shader = ExtResource("2_ams22")
+shader_parameter/rotation_speed_degrees_per_second = 180.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ams22"]
+radius = 67.18631
+
+[node name="Saw" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_yo6ls")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_4n6n6")
+texture = ExtResource("2_yo6ls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ams22")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
