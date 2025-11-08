@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var thrust: float = 700
+@export var thrust: float = 500
 
 var external_forces: Dictionary[Node, Vector2] = {}
 var net_external_force: Vector2 = Vector2.ZERO

@@ -11,6 +11,20 @@ func _ready() -> void:
 	if Engine.is_editor_hint() and amplitude_curve:
 		amplitude_curve = amplitude_curve.duplicate(true)
 
+func place_node2(xform: Transform2D, node_offset: float) -> Node2D:
+	var node = WaveNodes.alloc_node()
+	node.transform = xform
+	node.speed = speed
+	node.wavelength = wavelength
+	node.offset = node_offset
+
+	var t = (node_offset - offset) / line.curve.get_baked_length()
+	if amplitude_curve:
+		node.amplitude = amplitude * amplitude_curve.sample(t)
+	else:
+		node.amplitude = amplitude
+	return node
+
 func place_node(point: Vector2, angle: float, node_offset: float) -> Node2D:
 	var node = WaveNodes.alloc_node()
 	node.position = point
