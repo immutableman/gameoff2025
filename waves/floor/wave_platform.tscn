@@ -4,6 +4,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_lmx8e"]
 resource_local_to_scene = true
+bake_interval = 10.0
 
 [node name="WavePlatform" type="Node2D"]
 script = ExtResource("1_lmx8e")

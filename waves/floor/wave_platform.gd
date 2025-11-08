@@ -19,7 +19,7 @@ func place_node(point: Vector2, angle: float, node_offset: float) -> Node2D:
 	node.wavelength = wavelength
 	node.offset = node_offset
 
-	var t = node_offset / line.curve.get_baked_length()
+	var t = (node_offset - offset) / line.curve.get_baked_length()
 	if amplitude_curve:
 		node.amplitude = amplitude * amplitude_curve.sample(t)
 	else:
