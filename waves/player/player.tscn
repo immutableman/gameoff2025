@@ -46,6 +46,8 @@ texture = ExtResource("2_rkbax")
 [node name="Camera2D" type="Camera2D" parent="Friends"]
 process_callback = 0
 limit_enabled = false
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_drag_margin = true
