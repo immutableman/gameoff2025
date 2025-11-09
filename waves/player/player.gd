@@ -49,6 +49,16 @@ func _on_damaged():
 	$%DeathVFX.emitting = true
 	$%DeathSFX.play()
 	$RigidBody2D/Sprite2D.modulate = Color.TRANSPARENT
+	_do_death_restart()
+
+func _do_death_restart() -> void:
+	get_tree().paused = true
+	$DeathTimer.start()
+	await $DeathTimer.timeout
+	
+	if is_inside_tree():
+		get_tree().paused = false
+		get_tree().reload_current_scene()
 
 func _physics_process(delta: float) -> void:
 	var force = Vector2.ZERO

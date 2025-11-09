@@ -1,6 +1,6 @@
 extends AnimatableBody2D
 
-@export var speed: float = 300
+@export var speed: float = 3
 @export var wavelength: float = 200
 @export var amplitude: float = 40
 @export var offset: float = 0

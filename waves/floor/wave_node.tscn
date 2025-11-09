@@ -7,7 +7,7 @@ radius = 20.0
 
 [sub_resource type="Gradient" id="Gradient_jpqwq"]
 offsets = PackedFloat32Array(0, 0.18732782, 0.8567493, 1)
-colors = PackedColorArray(0, 0, 0, 0.49803922, 0.6627451, 0.6627451, 0.6627451, 1, 0.85490197, 0.85490197, 0.85490197, 1, 1, 1, 1, 0.45882353)
+colors = PackedColorArray(0.106236584, 0.10623657, 0.10623657, 1, 0.6627451, 0.6627451, 0.6627451, 1, 0.85490197, 0.85490197, 0.85490197, 1, 0.9007046, 0.90070456, 0.9007045, 1)
 
 [node name="WaveNode" type="AnimatableBody2D"]
 collision_layer = 2
