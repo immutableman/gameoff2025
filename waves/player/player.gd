@@ -84,3 +84,6 @@ func _physics_process(delta: float) -> void:
 func _on_rigid_body_2d_body_entered(body: Node) -> void:
 	if body.has_method('on_player_collision'):
 		body.on_player_collision(self)
+
+	if body.name == 'Hazards':
+		EventBus.player_damaged.emit()

@@ -1,0 +1,16 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dg5k426fiw368"]
+
+[ext_resource type="Texture2D" uid="uid://oap08xmcdtao" path="res://assets/kenney/new-platformer-pack-1.0/Spritesheets/spritesheet-tiles-double.png" id="1_xtjbp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ov7ie"]
+texture = ExtResource("1_xtjbp")
+texture_region_size = Vector2i(128, 128)
+10:9/0 = 0
+10:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-29.770027, 4.8803406, -0.48802185, 64, 26.841843, 3.9042664, 54.171707, 64, -54.17169, 64)
+10:15/0 = 0
+10:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-38.40909, -38.2536, -0.46650696, -53.492836, 38.409103, -37.942596, 52.093307, 0, 38.0981, 37.631584, -0.27548218, 52.3416, -37.78708, 37.631584, -52.404312, 0.31100464)
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_ov7ie")
