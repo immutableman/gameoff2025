@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dfl7fuoo6figg" path="res://assets/Arrow.png" id="2_i5hkm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5hkm"]
+resource_local_to_scene = true
 
 [node name="ForceZone" type="Control"]
 layout_mode = 3

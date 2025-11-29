@@ -1,6 +1,9 @@
 extends Control
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		$RigidBody2D/CollisionShape2D.shape = $RigidBody2D/CollisionShape2D.shape.duplicate(true)
+
 	$RigidBody2D/CollisionShape2D.shape.size = size
 	
 	# Update the CollisionShape2D's position to stay centered

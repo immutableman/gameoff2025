@@ -9,18 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://eqaxx4xo3kum" path="res://floor/spring_pad.tscn" id="7_ntych"]
 [ext_resource type="PackedScene" uid="uid://bw4vtclnulclg" path="res://floor/bounce_pad.tscn" id="8_ntych"]
 
-[sub_resource type="Curve2D" id="Curve2D_h13co"]
+[sub_resource type="Curve2D" id="Curve2D_ntych"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 320, 112, 0, 0, 0, 0, 1024, -272)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_ntych"]
-resource_local_to_scene = true
-bake_interval = 3.0
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -320, -688, 0, 0, 0, 0, -320, 528)
 }
 point_count = 2
 
@@ -28,7 +20,7 @@ point_count = 2
 resource_local_to_scene = true
 bake_interval = 3.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -896, -736, 0, 0, 0, 0, -304, -672)
+"points": PackedVector2Array(0, 0, 0, 0, -320, -688, 0, 0, 0, 0, -320, 528)
 }
 point_count = 2
 
@@ -36,7 +28,7 @@ point_count = 2
 resource_local_to_scene = true
 bake_interval = 3.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1040, -1392, 0, 0, 0, 0, -272, -624)
+"points": PackedVector2Array(0, 0, 0, 0, -896, -736, 0, 0, 0, 0, -304, -672)
 }
 point_count = 2
 
@@ -48,7 +40,15 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_tvnxl"]
+[sub_resource type="Curve2D" id="Curve2D_i680n"]
+resource_local_to_scene = true
+bake_interval = 3.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1040, -1392, 0, 0, 0, 0, -272, -624)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_gwr42"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 464, 48, 0, 0, 0, 0, 1168, -336)
@@ -72,7 +72,7 @@ tile_map_data = PackedByteArray("AAAMAAMAAAAHAAYAAAANAAMAAAAHAAcAAAAOAAMAAAAHAAc
 tile_set = ExtResource("2_mjgo4")
 
 [node name="Player" parent="." instance=ExtResource("3_h13co")]
-position = Vector2(304, 688)
+position = Vector2(336, 688)
 
 [node name="Goal" parent="." instance=ExtResource("4_h13co")]
 position = Vector2(-5952, 32)
@@ -83,7 +83,7 @@ wavelength = 175.0
 
 [node name="Path2D" parent="WavePlatform" index="0"]
 position = Vector2(-80, -160)
-curve = SubResource("Curve2D_h13co")
+curve = SubResource("Curve2D_ntych")
 
 [node name="WavePlatform3" parent="." instance=ExtResource("5_tvnxl")]
 position = Vector2(640, 704)
@@ -93,7 +93,7 @@ amplitude = 150.0
 
 [node name="Path2D" parent="WavePlatform3" index="0"]
 position = Vector2(-4464, -16)
-curve = SubResource("Curve2D_ntych")
+curve = SubResource("Curve2D_ka5ce")
 
 [node name="WavePlatform4" parent="." instance=ExtResource("5_tvnxl")]
 position = Vector2(640, 704)
@@ -103,7 +103,7 @@ amplitude = 0.0
 
 [node name="Path2D" parent="WavePlatform4" index="0"]
 position = Vector2(-4896, 880)
-curve = SubResource("Curve2D_ka5ce")
+curve = SubResource("Curve2D_rh6w1")
 
 [node name="WavePlatform5" parent="." instance=ExtResource("5_tvnxl")]
 position = Vector2(640, 704)
@@ -112,7 +112,7 @@ wavelength = 175.0
 
 [node name="Path2D" parent="WavePlatform5" index="0"]
 position = Vector2(-5488, 816)
-curve = SubResource("Curve2D_rh6w1")
+curve = SubResource("Curve2D_8rm05")
 
 [node name="WavePlatform6" parent="." instance=ExtResource("5_tvnxl")]
 position = Vector2(640, 704)
@@ -121,7 +121,7 @@ wavelength = 175.0
 
 [node name="Path2D" parent="WavePlatform6" index="0"]
 position = Vector2(-5488, 624)
-curve = SubResource("Curve2D_8rm05")
+curve = SubResource("Curve2D_i680n")
 
 [node name="WavePlatform2" parent="." instance=ExtResource("5_tvnxl")]
 position = Vector2(544, 512)
@@ -130,7 +130,7 @@ offset = 100.0
 
 [node name="Path2D" parent="WavePlatform2" index="0"]
 position = Vector2(-128, -96)
-curve = SubResource("Curve2D_tvnxl")
+curve = SubResource("Curve2D_gwr42")
 
 [node name="SpringPad" parent="." instance=ExtResource("7_ntych")]
 offset_left = 3080.0
@@ -144,11 +144,10 @@ metadata/_edit_use_anchors_ = true
 [node name="SpringPad3" parent="." instance=ExtResource("7_ntych")]
 offset_left = -656.0
 offset_top = 944.0
-offset_right = -536.0
+offset_right = -528.0
 offset_bottom = 1004.0
 speed = 800.0
 seconds_to_max_speed = 0.01
-metadata/_edit_use_anchors_ = true
 
 [node name="SpringPad4" parent="." instance=ExtResource("7_ntych")]
 offset_left = -3728.0
