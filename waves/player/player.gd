@@ -87,3 +87,7 @@ func _on_rigid_body_2d_body_entered(body: Node) -> void:
 
 	if body.name == 'Hazards':
 		EventBus.player_damaged.emit()
+
+func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("pause"):
+		EventBus.pause.emit()

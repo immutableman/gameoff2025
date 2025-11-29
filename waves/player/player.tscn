@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3ysnreep03yt"]
+[gd_scene load_steps=12 format=3 uid="uid://b3ysnreep03yt"]
 
 [ext_resource type="Script" uid="uid://c55bn1a3526mr" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://cg86psxfsow3q" path="res://player/player_body.gd" id="2_g6k8r"]
 [ext_resource type="Texture2D" uid="uid://cv7dsle8bh5fc" path="res://assets/kenney_rolling-ball-assets/PNG/Retina/ball_red_large_alt.png" id="2_rkbax"]
 [ext_resource type="Texture2D" uid="uid://ddsehcwb45d0v" path="res://assets/kenney_rolling-ball-assets/PNG/Default/particle_1.png" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://cgadwtoyrojdo" path="res://pause_menu/pause_menu.tscn" id="4_rgyib"]
 [ext_resource type="Texture2D" uid="uid://nvfwy261hre7" path="res://assets/kenney_rolling-ball-assets/PNG/Default/ball_red_small.png" id="4_yw30f"]
 [ext_resource type="AudioStream" uid="uid://duglepcgckoyr" path="res://assets/kenney/new-platformer-pack-1.0/Sounds/sfx_disappear.ogg" id="5_qjkh3"]
 [ext_resource type="AudioStream" uid="uid://bv2lxw7rfvj1n" path="res://assets/kenney/new-platformer-pack-1.0/Sounds/sfx_coin.ogg" id="7_boad6"]
@@ -53,6 +54,10 @@ position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_drag_margin = true
+
+[node name="PauseMenu" parent="Friends/Camera2D" instance=ExtResource("4_rgyib")]
+unique_name_in_owner = true
+visible = false
 
 [node name="EffortVFX" type="CPUParticles2D" parent="Friends"]
 unique_name_in_owner = true
