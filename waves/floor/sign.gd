@@ -9,7 +9,13 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print('enter')
+	$Hint.visible = true
+	$Hint.scale = Vector2(0.5, 0.5)
+	var tween = create_tween()
+	tween.tween_property($Hint, 'scale', Vector2.ONE, .1)
 
 func _on_body_exited(body: Node2D) -> void:
-	print('exit')
+	var tween = create_tween()
+	tween.tween_property($Hint, 'scale', Vector2(.5,.5), .1)
+	await tween.finished
+	$Hint.visible = false
