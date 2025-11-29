@@ -1,10 +1,12 @@
 extends TileMapLayer
 
+const YELLOW_KEY_BLOCK_COORDS = Vector2i(11, 4)
+
 func _ready() -> void:
 	EventBus.pickup_key.connect(_on_pickup_key)
 
 func _on_pickup_key() -> void:
-	erase_all_tiles(Vector2i(11, 4))
+	erase_all_tiles(YELLOW_KEY_BLOCK_COORDS)
 
 func erase_all_tiles(atlas_coords: Vector2i):
 	# Get all cells that use the specific old tile type
