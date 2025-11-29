@@ -131,7 +131,7 @@ position = Vector2(5104, -432)
 
 [node name="Sign" parent="." instance=ExtResource("9_7dhdk")]
 position = Vector2(736, 560)
-text = "This way!"
+text = "This way, Nathan d!"
 texture = ExtResource("10_qkx05")
 
 [editable path="WavePlatform3"]

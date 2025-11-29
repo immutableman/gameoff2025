@@ -10,3 +10,5 @@ func _ready() -> void:
 		var btn = level_button_scene.instantiate()
 		btn.set_level_data(level)
 		$%Levels.add_child(btn)
+
+	$%Levels.get_children()[1].set_focus()

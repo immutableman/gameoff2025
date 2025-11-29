@@ -15,3 +15,7 @@ func set_level_data(data: LevelData) -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_packed(_data.scene)
+
+func set_focus():
+	print($Button.text)
+	$Button.grab_focus.call_deferred()
