@@ -1,0 +1,36 @@
+[gd_scene load_steps=11 format=3 uid="uid://bru3j1b4p3c5u"]
+
+[ext_resource type="Script" uid="uid://btyfqqfhrkshr" path="res://levels.gd" id="1_48rmr"]
+[ext_resource type="Script" uid="uid://dlgbxo63gfwag" path="res://main_menu/level_data.gd" id="2_b0aun"]
+[ext_resource type="PackedScene" uid="uid://ch7wrmvsdbf6c" path="res://level/test.tscn" id="3_x8mww"]
+[ext_resource type="PackedScene" uid="uid://cfp3rlc0ot0o0" path="res://level/waving_hello.tscn" id="4_ci5qh"]
+[ext_resource type="PackedScene" uid="uid://cvhd5l0upmfud" path="res://level/a_series_of_tubes.tscn" id="5_04tao"]
+[ext_resource type="PackedScene" uid="uid://c8mgkejyuprkh" path="res://level/crossing_the_ocean.tscn" id="6_283no"]
+
+[sub_resource type="Resource" id="Resource_3shxk"]
+script = ExtResource("2_b0aun")
+display_name = "Test"
+scene = ExtResource("3_x8mww")
+metadata/_custom_type_script = "uid://dlgbxo63gfwag"
+
+[sub_resource type="Resource" id="Resource_6tl50"]
+script = ExtResource("2_b0aun")
+display_name = "Waving Hello"
+scene = ExtResource("4_ci5qh")
+metadata/_custom_type_script = "uid://dlgbxo63gfwag"
+
+[sub_resource type="Resource" id="Resource_t6bnd"]
+script = ExtResource("2_b0aun")
+display_name = "Not a Dump Truck"
+scene = ExtResource("5_04tao")
+metadata/_custom_type_script = "uid://dlgbxo63gfwag"
+
+[sub_resource type="Resource" id="Resource_ia84y"]
+script = ExtResource("2_b0aun")
+display_name = "Crossing the Ocean"
+scene = ExtResource("6_283no")
+metadata/_custom_type_script = "uid://dlgbxo63gfwag"
+
+[node name="Levels" type="Node"]
+script = ExtResource("1_48rmr")
+level_list = Array[ExtResource("2_b0aun")]([SubResource("Resource_3shxk"), SubResource("Resource_6tl50"), SubResource("Resource_t6bnd"), SubResource("Resource_ia84y")])

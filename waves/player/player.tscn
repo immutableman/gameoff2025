@@ -23,6 +23,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 [node name="Player" type="Node2D" groups=["player"]]
 z_index = 1
 script = ExtResource("1_oul6g")
+thrust = null
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_mask = 2

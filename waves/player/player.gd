@@ -30,7 +30,8 @@ func add_mover(mover: Node) -> void:
 func remove_mover(mover: Node) -> void:
 	movers.erase(mover)
 
-func exit_level(endPos: Vector2) -> void:
+func exit_level_success(endPos: Vector2) -> void:
+	Levels.mark_complete()
 	$RigidBody2D.set_deferred('freeze', true)
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT).tween_property($RigidBody2D, 'global_position', endPos, 0.5)

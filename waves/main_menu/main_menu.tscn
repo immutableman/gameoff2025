@@ -1,40 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://8u4b4o80hs0n"]
+[gd_scene load_steps=3 format=3 uid="uid://8u4b4o80hs0n"]
 
 [ext_resource type="Script" uid="uid://f88v3bdewv6q" path="res://main_menu/main_menu.gd" id="1_oa53l"]
-[ext_resource type="Script" uid="uid://dlgbxo63gfwag" path="res://main_menu/level_data.gd" id="2_d3a7t"]
-[ext_resource type="PackedScene" uid="uid://ch7wrmvsdbf6c" path="res://level/test.tscn" id="3_3shxk"]
-[ext_resource type="PackedScene" uid="uid://cfp3rlc0ot0o0" path="res://level/waving_hello.tscn" id="4_3f7m4"]
 [ext_resource type="PackedScene" uid="uid://qh23budy3ucv" path="res://main_menu/level_button.tscn" id="4_bws42"]
-[ext_resource type="PackedScene" uid="uid://cvhd5l0upmfud" path="res://level/a_series_of_tubes.tscn" id="5_6tl50"]
-[ext_resource type="PackedScene" uid="uid://c8mgkejyuprkh" path="res://level/crossing_the_ocean.tscn" id="6_t6bnd"]
-
-[sub_resource type="Resource" id="Resource_3shxk"]
-script = ExtResource("2_d3a7t")
-display_name = "Test"
-scene = ExtResource("3_3shxk")
-metadata/_custom_type_script = "uid://dlgbxo63gfwag"
-
-[sub_resource type="Resource" id="Resource_6tl50"]
-script = ExtResource("2_d3a7t")
-display_name = "Waving Hello"
-scene = ExtResource("4_3f7m4")
-metadata/_custom_type_script = "uid://dlgbxo63gfwag"
-
-[sub_resource type="Resource" id="Resource_t6bnd"]
-script = ExtResource("2_d3a7t")
-display_name = "Not a Dump Truck"
-scene = ExtResource("5_6tl50")
-metadata/_custom_type_script = "uid://dlgbxo63gfwag"
-
-[sub_resource type="Resource" id="Resource_ia84y"]
-script = ExtResource("2_d3a7t")
-display_name = "Crossing the Ocean"
-scene = ExtResource("6_t6bnd")
-metadata/_custom_type_script = "uid://dlgbxo63gfwag"
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_oa53l")
-level_list = Array[ExtResource("2_d3a7t")]([SubResource("Resource_3shxk"), SubResource("Resource_6tl50"), SubResource("Resource_t6bnd"), SubResource("Resource_ia84y")])
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
