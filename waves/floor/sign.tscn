@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dd0kwe0gloeqf" path="res://floor/sign.gd" id="1_mpfgw"]
 [ext_resource type="Texture2D" uid="uid://cchwt4p22poq5" path="res://assets/sign_info.tres" id="2_mpfgw"]
-[ext_resource type="Texture2D" uid="uid://bj62vj1hirvww" path="res://assets/kenney/new-platformer-pack-1.0/Input/keyboard_space.png" id="3_sqxub"]
+[ext_resource type="Texture2D" uid="uid://bj62vj1hirvww" path="res://assets/kenney/input-prompts/Keyboard & Mouse/keyboard_space.png" id="3_sqxub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpfgw"]
 size = Vector2(128, 128)
@@ -10,6 +10,7 @@ size = Vector2(128, 128)
 [node name="Sign" type="Area2D"]
 collision_layer = 0
 script = ExtResource("1_mpfgw")
+text = "[b]Thank you[/b] for reading me!"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mpfgw")
@@ -18,6 +19,7 @@ shape = SubResource("RectangleShape2D_mpfgw")
 texture = ExtResource("2_mpfgw")
 
 [node name="Hint" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -112)
 texture = ExtResource("3_sqxub")
 

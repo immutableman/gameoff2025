@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj62vj1hirvww"
-path="res://.godot/imported/keyboard_space.png-fb75004d601c408c0ab749744c1a335d.ctex"
+uid="uid://co5v0n0a6gx1s"
+path="res://.godot/imported/button_rectangle_border.png-63c736b3f46959b18698662908751d60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/new-platformer-pack-1.0/Input/keyboard_space.png"
-dest_files=["res://.godot/imported/keyboard_space.png-fb75004d601c408c0ab749744c1a335d.ctex"]
+source_file="res://assets/kenney/ui-pack/button_rectangle_border.png"
+dest_files=["res://.godot/imported/button_rectangle_border.png-63c736b3f46959b18698662908751d60.ctex"]
 
 [params]
 

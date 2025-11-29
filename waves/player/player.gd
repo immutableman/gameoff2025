@@ -92,3 +92,8 @@ func _on_rigid_body_2d_body_entered(body: Node) -> void:
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("pause"):
 		EventBus.pause.emit()
+	elif event.is_action_pressed("interact"):
+		if $RigidBody2D.interactables.size() > 0:
+			# TODO maybe make this generalized
+			var text = $RigidBody2D.interactables.back().get_text()
+			EventBus.show_dialog.emit(text)

@@ -11,18 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://c87sdmd24f81a" path="res://assets/sign_left.tres" id="10_qkx05"]
 [ext_resource type="PackedScene" uid="uid://bp66wbknaaeu6" path="res://floor/saw.tscn" id="11_phop2"]
 
-[sub_resource type="Curve2D" id="Curve2D_phop2"]
+[sub_resource type="Curve2D" id="Curve2D_qkx05"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 4000, 416, -361.3378, 0, 361.3378, 0, 4736, 256)
 }
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_tel3o"]
+[sub_resource type="Curve" id="Curve_phop2"]
 _data = [Vector2(0.14628822, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.84934497, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Curve2D" id="Curve2D_iyoqu"]
+[sub_resource type="Curve2D" id="Curve2D_tel3o"]
 resource_local_to_scene = true
 bake_interval = 2.0
 _data = {
@@ -30,22 +30,22 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_8v53v"]
+[sub_resource type="Curve" id="Curve_iyoqu"]
 _data = [Vector2(0.40174675, 0), 0.0, 0.0, 0, 0, Vector2(0.8537118, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Curve2D" id="Curve2D_4m8vx"]
+[sub_resource type="Curve2D" id="Curve2D_8v53v"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 128, 16, 0, 0, 0, 0, 1216, -192)
 }
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_w5305"]
+[sub_resource type="Curve" id="Curve_4m8vx"]
 _data = [Vector2(0.25327513, 0), 0.0, 0.0, 0, 0, Vector2(0.61353713, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Curve2D" id="Curve2D_ggqv0"]
+[sub_resource type="Curve2D" id="Curve2D_w5305"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 32, 16, 0, 0, 0, 0, 944, 16)
@@ -82,37 +82,37 @@ wavelength = 350.0
 amplitude = 0.0
 
 [node name="Path2D" parent="WavePlatform3" index="0"]
-curve = SubResource("Curve2D_phop2")
+curve = SubResource("Curve2D_qkx05")
 
 [node name="WavePlatform4" parent="." instance=ExtResource("5_8v53v")]
 speed = 650.0
 wavelength = 350.0
 amplitude = 300.0
-amplitude_curve = SubResource("Curve_tel3o")
+amplitude_curve = SubResource("Curve_phop2")
 
 [node name="Path2D" parent="WavePlatform4" index="0"]
 position = Vector2(784, 288)
-curve = SubResource("Curve2D_iyoqu")
+curve = SubResource("Curve2D_tel3o")
 
 [node name="WavePlatform" parent="." instance=ExtResource("5_8v53v")]
 speed = 420.0
 amplitude = 120.0
-amplitude_curve = SubResource("Curve_8v53v")
+amplitude_curve = SubResource("Curve_iyoqu")
 
 [node name="Path2D" parent="WavePlatform" index="0"]
 position = Vector2(2544, 640)
-curve = SubResource("Curve2D_4m8vx")
+curve = SubResource("Curve2D_8v53v")
 
 [node name="WavePlatform2" parent="." instance=ExtResource("5_8v53v")]
 position = Vector2(960, 160)
 speed = -600.0
 wavelength = 600.0
 amplitude = 100.0
-amplitude_curve = SubResource("Curve_w5305")
+amplitude_curve = SubResource("Curve_4m8vx")
 
 [node name="Path2D" parent="WavePlatform2" index="0"]
 position = Vector2(-112, 464)
-curve = SubResource("Curve2D_ggqv0")
+curve = SubResource("Curve2D_w5305")
 
 [node name="Saw" parent="." instance=ExtResource("11_phop2")]
 position = Vector2(3696, 736)
@@ -131,6 +131,7 @@ position = Vector2(5104, -432)
 
 [node name="Sign" parent="." instance=ExtResource("9_7dhdk")]
 position = Vector2(736, 560)
+text = "This way!"
 texture = ExtResource("10_qkx05")
 
 [editable path="WavePlatform3"]
