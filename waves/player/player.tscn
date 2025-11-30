@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://duglepcgckoyr" path="res://assets/kenney/new-platformer-pack-1.0/Sounds/sfx_disappear.ogg" id="5_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://bm1emnv8y3f46" path="res://assets/ballpart.png" id="7_2ieo8"]
 [ext_resource type="AudioStream" uid="uid://bv2lxw7rfvj1n" path="res://assets/kenney/new-platformer-pack-1.0/Sounds/sfx_coin.ogg" id="7_boad6"]
-[ext_resource type="Texture2D" uid="uid://cyw02goevqml3" path="res://assets/player/fish 3.png" id="13_yllr7"]
+[ext_resource type="Texture2D" uid="uid://ckqqttotmh5nm" path="res://assets/player/fish dead.png" id="13_yllr7"]
 
 [sub_resource type="Gradient" id="Gradient_g1dw6"]
 offsets = PackedFloat32Array(0, 0.3140496, 0.523416, 1)
@@ -150,7 +150,7 @@ one_shot = true
 
 [node name="DeathTimer" type="Timer" parent="."]
 process_mode = 3
-wait_time = 2.0
+wait_time = 1.5
 one_shot = true
 
 [node name="DeathBody" type="RigidBody2D" parent="."]
