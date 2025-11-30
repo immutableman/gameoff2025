@@ -1,8 +1,14 @@
 extends Button
 
+const _audioOff = preload("res://assets/kenney/ui-pack/audioOff.png")
+const _audioOn = preload("res://assets/kenney/ui-pack/audioOn.png")
+
 var _bus_idx: int
 var _off
 var _on
+
+func _ready() -> void:
+	set_bus('SFX', _audioOff, _audioOn)
 
 # Called when the node enters the scene tree for the first time.
 func set_bus(bus: String, off, on) -> void:

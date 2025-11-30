@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgadwtoyrojdo"]
+[gd_scene load_steps=6 format=3 uid="uid://cgadwtoyrojdo"]
 
 [ext_resource type="Script" uid="uid://rs65r0dwnbxl" path="res://pause_menu/pause_menu.gd" id="1_5hbt6"]
+[ext_resource type="Texture2D" uid="uid://bfsttsvoswmts" path="res://assets/kenney/ui-pack/audioOn.png" id="2_uwtdo"]
+[ext_resource type="Script" uid="uid://dpbc61t06mk3o" path="res://main_menu/audio_button.gd" id="3_b4s0c"]
 
 [sub_resource type="Gradient" id="Gradient_c7wlu"]
 colors = PackedColorArray(0.30692276, 0.30692267, 0.3069227, 1, 0.51850265, 0.51850265, 0.51850265, 1)
@@ -45,6 +47,15 @@ text = "Restart Level"
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Quit"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SFXButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+icon = ExtResource("2_uwtdo")
+script = ExtResource("3_b4s0c")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
