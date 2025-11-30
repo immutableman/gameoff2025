@@ -64,10 +64,11 @@ func _on_damaged():
 	$%DeathSFX.play()
 	$RigidBody2D/BallSprite2D.visible = false
 	$Friends/BallmarkSprite2D.visible = false
-	$Friends/FishAnim.visible = false
+	$%FishAnim.visible = false
 	$DeathBody.position = $RigidBody2D.position
 	$DeathBody.linear_velocity = $RigidBody2D.linear_velocity
 	$DeathBody.angular_velocity = $RigidBody2D.angular_velocity
+	$DeathBody/Sprite2D.flip_h = $%FishAnim.flip_h
 	$DeathBody.visible = true
 	$DeathBody.process_mode = Node.PROCESS_MODE_ALWAYS
 	_do_death_restart()
