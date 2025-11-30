@@ -1,5 +1,8 @@
 extends Node2D
 
+const MAX_SPEED_FOR_ANIM = 500
+const MAX_PLAYRATE_FOR_ANIM = 2.5
+
 @export var thrust: float = 500
 
 var external_forces: Dictionary[Node, Vector2] = {}
@@ -44,6 +47,7 @@ func exit_level_success(endPos: Vector2) -> void:
 
 func _ready() -> void:
 	EventBus.player_damaged.connect(_on_damaged)
+	$%FishAnim.play('run')
 
 func _on_damaged():
 	$%EffortVFX.emitting = false
@@ -61,6 +65,18 @@ func _do_death_restart() -> void:
 	if is_inside_tree():
 		get_tree().paused = false
 		get_tree().reload_current_scene()
+
+func _process(delta: float) -> void:
+	var speed_factor = clamp(abs($RigidBody2D.linear_velocity.x) / MAX_SPEED_FOR_ANIM, 0, 1)
+	$%FishAnim.speed_scale = lerp(0.0, MAX_PLAYRATE_FOR_ANIM, speed_factor)
+	if Input.is_action_pressed('left'):
+		$%FishAnim.flip_h = false
+	elif Input.is_action_pressed('right'):
+		$%FishAnim.flip_h = true
+	elif $RigidBody2D.linear_velocity.x > 0:
+		$%FishAnim.flip_h = true
+	elif $RigidBody2D.linear_velocity.x < 0:
+		$%FishAnim.flip_h = false
 
 func _physics_process(delta: float) -> void:
 	var force = Vector2.ZERO

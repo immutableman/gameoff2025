@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3ysnreep03yt"]
+[gd_scene load_steps=16 format=3 uid="uid://b3ysnreep03yt"]
 
 [ext_resource type="Script" uid="uid://c55bn1a3526mr" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://cnet57c4ptvwe" path="res://assets/fish.png" id="2_8t03j"]
 [ext_resource type="Script" uid="uid://cg86psxfsow3q" path="res://player/player_body.gd" id="2_g6k8r"]
 [ext_resource type="Texture2D" uid="uid://cttb8tep64an0" path="res://assets/ballmark.png" id="3_2ieo8"]
+[ext_resource type="SpriteFrames" uid="uid://5e13cx8n8obp" path="res://player/player_fish_anim.tres" id="3_ebec5"]
 [ext_resource type="Texture2D" uid="uid://ddsehcwb45d0v" path="res://assets/kenney_rolling-ball-assets/PNG/Default/particle_1.png" id="3_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://dd62hbc4dv506" path="res://assets/ball.png" id="3_hg6s5"]
 [ext_resource type="PackedScene" uid="uid://cgadwtoyrojdo" path="res://pause_menu/pause_menu.tscn" id="4_rgyib"]
@@ -31,8 +32,17 @@ script = ExtResource("1_oul6g")
 [node name="Friends" type="Node2D" parent="."]
 
 [node name="FishSprite2D" type="Sprite2D" parent="Friends"]
+visible = false
 scale = Vector2(0.44, 0.44)
 texture = ExtResource("2_8t03j")
+
+[node name="FishAnim" type="AnimatedSprite2D" parent="Friends"]
+unique_name_in_owner = true
+scale = Vector2(0.44, 0.44)
+sprite_frames = ExtResource("3_ebec5")
+animation = &"run"
+frame = 1
+frame_progress = 0.10443962
 
 [node name="BallmarkSprite2D" type="Sprite2D" parent="Friends"]
 position = Vector2(-3, -3)
