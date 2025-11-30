@@ -91,9 +91,9 @@ func _process(delta: float) -> void:
 		$%FishAnim.flip_h = false
 	elif Input.is_action_pressed('right'):
 		$%FishAnim.flip_h = true
-	elif $RigidBody2D.linear_velocity.x > 0:
+	elif $RigidBody2D.linear_velocity.x > 20:
 		$%FishAnim.flip_h = true
-	elif $RigidBody2D.linear_velocity.x < 0:
+	elif $RigidBody2D.linear_velocity.x < -20:
 		$%FishAnim.flip_h = false
 
 	var t = clamp(speed_factor*8, 0, 1)
