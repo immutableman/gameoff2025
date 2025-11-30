@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://8u4b4o80hs0n"]
+[gd_scene load_steps=8 format=3 uid="uid://8u4b4o80hs0n"]
 
 [ext_resource type="Script" uid="uid://f88v3bdewv6q" path="res://main_menu/main_menu.gd" id="1_oa53l"]
 [ext_resource type="Texture2D" uid="uid://q2m1iuprwxvi" path="res://assets/title.png" id="2_3shxk"]
 [ext_resource type="Texture2D" uid="uid://bfsttsvoswmts" path="res://assets/kenney/ui-pack/audioOn.png" id="4_3f7m4"]
 [ext_resource type="PackedScene" uid="uid://qh23budy3ucv" path="res://main_menu/level_button.tscn" id="4_bws42"]
 [ext_resource type="Script" uid="uid://dpbc61t06mk3o" path="res://main_menu/audio_button.gd" id="5_3f7m4"]
+[ext_resource type="Texture2D" uid="uid://3tbo8e20ilwf" path="res://assets/kenney/ui-pack/musicOn.png" id="6_6tl50"]
+[ext_resource type="Script" uid="uid://coh1q3nvwvmgk" path="res://main_menu/bgm_button.gd" id="7_t6bnd"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_oa53l")
@@ -59,3 +61,13 @@ offset_bottom = 638.0
 icon = ExtResource("4_3f7m4")
 expand_icon = true
 script = ExtResource("5_3f7m4")
+
+[node name="BGMButton" type="Button" parent="."]
+custom_minimum_size = Vector2(58, 58)
+offset_left = 1018.0
+offset_top = 580.0
+offset_right = 1076.0
+offset_bottom = 638.0
+icon = ExtResource("6_6tl50")
+expand_icon = true
+script = ExtResource("7_t6bnd")

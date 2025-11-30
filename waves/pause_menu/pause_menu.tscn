@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgadwtoyrojdo"]
+[gd_scene load_steps=8 format=3 uid="uid://cgadwtoyrojdo"]
 
 [ext_resource type="Script" uid="uid://rs65r0dwnbxl" path="res://pause_menu/pause_menu.gd" id="1_5hbt6"]
 [ext_resource type="Texture2D" uid="uid://bfsttsvoswmts" path="res://assets/kenney/ui-pack/audioOn.png" id="2_uwtdo"]
 [ext_resource type="Script" uid="uid://dpbc61t06mk3o" path="res://main_menu/audio_button.gd" id="3_b4s0c"]
+[ext_resource type="Texture2D" uid="uid://3tbo8e20ilwf" path="res://assets/kenney/ui-pack/musicOn.png" id="4_s1glv"]
+[ext_resource type="Script" uid="uid://coh1q3nvwvmgk" path="res://main_menu/bgm_button.gd" id="5_wn31l"]
 
 [sub_resource type="Gradient" id="Gradient_c7wlu"]
 colors = PackedColorArray(0.30692276, 0.30692267, 0.3069227, 1, 0.51850265, 0.51850265, 0.51850265, 1)
@@ -54,10 +56,18 @@ layout_mode = 2
 [node name="SFXButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(58, 58)
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 icon = ExtResource("2_uwtdo")
 expand_icon = true
 script = ExtResource("3_b4s0c")
+
+[node name="BGMButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(58, 58)
+layout_mode = 2
+size_flags_horizontal = 2
+icon = ExtResource("4_s1glv")
+expand_icon = true
+script = ExtResource("5_wn31l")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

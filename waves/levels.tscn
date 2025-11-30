@@ -44,6 +44,7 @@ script = ExtResource("1_48rmr")
 level_list = Array[ExtResource("2_b0aun")]([SubResource("Resource_3shxk"), SubResource("Resource_6tl50"), SubResource("Resource_t6bnd"), SubResource("Resource_ia84y"), SubResource("Resource_ci5qh")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("8_ci5qh")
 volume_db = -10.0
 autoplay = true
