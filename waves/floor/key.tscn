@@ -25,5 +25,6 @@ texture = SubResource("AtlasTexture_y7yq2")
 stream = ExtResource("3_y7yq2")
 volume_db = -10.0
 pitch_scale = 0.7
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

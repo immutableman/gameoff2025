@@ -167,9 +167,11 @@ process_material = SubResource("ParticleProcessMaterial_e7oew")
 unique_name_in_owner = true
 process_mode = 3
 stream = ExtResource("5_qjkh3")
+bus = &"SFX"
 
 [node name="VictorySFX" type="AudioStreamPlayer2D" parent="Friends"]
 stream = ExtResource("7_boad6")
+bus = &"SFX"
 
 [node name="OneWayPoint" type="Node2D" parent="Friends"]
 unique_name_in_owner = true
