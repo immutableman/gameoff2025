@@ -17,6 +17,7 @@ var movers: Array[Node] = []
 func _ready() -> void:
 	EventBus.player_damaged.connect(_on_damaged)
 	$%FishAnim.play('run')
+	$%LevelLabel.text = Levels.get_level_description()
 
 func get_player_position() -> Vector2:
 	return $%OneWayPoint.global_position

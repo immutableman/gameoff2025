@@ -47,6 +47,10 @@ enabled=PackedStringArray()
 
 player=""
 
+[gui]
+
+theme/custom="uid://bcosqefnl5s8c"
+
 [input]
 
 ui_left={

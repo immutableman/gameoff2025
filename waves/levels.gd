@@ -4,6 +4,10 @@ extends Node
 
 func _ready() -> void:
 	EventBus.exit_success.connect(_on_exit_success)
+	var i = 0
+	for data in level_list:
+		i+=1
+		data.display_name = "%s) %s" % [i, data.display_name]
 
 func mark_complete():
 	var path = get_tree().current_scene.get_scene_file_path()
@@ -28,3 +32,10 @@ func _on_exit_success() -> void:
 		get_tree().change_scene_to_packed(next.scene)
 	else:
 		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
+
+func get_level_description() -> String:
+	var path = get_tree().current_scene.get_scene_file_path()
+	for data in level_list:
+		if path == data.scene.resource_path:
+			return data.display_name
+	return path
