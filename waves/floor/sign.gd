@@ -10,18 +10,20 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	body.enter_range(self)
-	$Hint.visible = true
-	$Hint.scale = Vector2(0.5, 0.5)
-	var tween = create_tween()
-	tween.tween_property($Hint, 'scale', Vector2.ONE, .1)
+	if body.has_method('enter_range'):
+		body.enter_range(self)
+		$Hint.visible = true
+		$Hint.scale = Vector2(0.5, 0.5)
+		var tween = create_tween()
+		tween.tween_property($Hint, 'scale', Vector2.ONE, .1)
 
 func _on_body_exited(body: Node2D) -> void:
-	body.exit_range(self)
-	var tween = create_tween()
-	tween.tween_property($Hint, 'scale', Vector2(.5,.5), .1)
-	await tween.finished
-	$Hint.visible = false
+	if body.has_method('exit_range'):
+		body.exit_range(self)
+		var tween = create_tween()
+		tween.tween_property($Hint, 'scale', Vector2(.5,.5), .1)
+		await tween.finished
+		$Hint.visible = false
 
 func get_text() -> String:
 	return text

@@ -12,7 +12,7 @@ var external_forces: Dictionary[Node, Vector2] = {}
 var net_external_force: Vector2 = Vector2.ZERO
 var movers: Array[Node] = []
 
-var _bob_tween: Tween
+#var _bob_tween: Tween
 
 func _ready() -> void:
 	EventBus.player_damaged.connect(_on_damaged)
@@ -55,20 +55,28 @@ func exit_level_success(endPos: Vector2) -> void:
 
 
 func _on_damaged():
+	process_mode = Node.PROCESS_MODE_DISABLED
+	$RigidBody2D.set_deferred('freeze', true)
 	$%EffortVFX.emitting = false
 	$%DeathVFX.emitting = true
 	$%DeathSFX.play()
-	$RigidBody2D/BallSprite2D.modulate = Color.TRANSPARENT
-	$Friends/BallmarkSprite2D.modulate = Color.TRANSPARENT
+	$RigidBody2D/BallSprite2D.visible = false
+	$Friends/BallmarkSprite2D.visible = false
+	$Friends/FishAnim.visible = false
+	$DeathBody.position = $RigidBody2D.position
+	$DeathBody.linear_velocity = $RigidBody2D.linear_velocity
+	$DeathBody.angular_velocity = $RigidBody2D.angular_velocity
+	$DeathBody.visible = true
+	$DeathBody.process_mode = Node.PROCESS_MODE_ALWAYS
 	_do_death_restart()
 
 func _do_death_restart() -> void:
-	get_tree().paused = true
+	#get_tree().paused = true
 	$DeathTimer.start()
 	await $DeathTimer.timeout
 	
 	if is_inside_tree():
-		get_tree().paused = false
+		#get_tree().paused = false
 		get_tree().reload_current_scene()
 
 func _process(delta: float) -> void:
