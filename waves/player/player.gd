@@ -55,7 +55,7 @@ func exit_level_success(endPos: Vector2) -> void:
 
 
 func _on_damaged():
-	process_mode = Node.PROCESS_MODE_DISABLED
+	set_deferred('process_mode', Node.PROCESS_MODE_DISABLED)
 	$RigidBody2D.set_deferred('freeze', true)
 	$%EffortVFX.emitting = false
 	$%DeathVFX.emitting = true
