@@ -46,15 +46,17 @@ text = "Restart Level"
 [node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Quit"
+text = "Main Menu"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="SFXButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(58, 58)
 layout_mode = 2
 size_flags_horizontal = 6
 icon = ExtResource("2_uwtdo")
+expand_icon = true
 script = ExtResource("3_b4s0c")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

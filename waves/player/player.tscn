@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b3ysnreep03yt"]
+[gd_scene load_steps=26 format=3 uid="uid://b3ysnreep03yt"]
 
 [ext_resource type="Script" uid="uid://c55bn1a3526mr" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://cnet57c4ptvwe" path="res://assets/fish.png" id="2_8t03j"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://duglepcgckoyr" path="res://assets/kenney/new-platformer-pack-1.0/Sounds/sfx_disappear.ogg" id="5_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://bm1emnv8y3f46" path="res://assets/ballpart.png" id="7_2ieo8"]
 [ext_resource type="AudioStream" uid="uid://bv2lxw7rfvj1n" path="res://assets/kenney/new-platformer-pack-1.0/Sounds/sfx_coin.ogg" id="7_boad6"]
+[ext_resource type="Texture2D" uid="uid://cxnwh7afn3i0v" path="res://assets/kenney/input-prompts/Keyboard & Mouse/keyboard_escape.png" id="7_tqiix"]
 [ext_resource type="Texture2D" uid="uid://dsbgu1occ5tsx" path="res://assets/player/drop.png" id="9_wodsf"]
 [ext_resource type="Texture2D" uid="uid://coedighlcoywv" path="res://assets/player/drop left.png" id="10_32hag"]
 [ext_resource type="Curve" uid="uid://bfuqb0w2htxhh" path="res://player/drop_fade_curve.tres" id="10_tqiix"]
@@ -105,6 +106,21 @@ visible = false
 [node name="Dialog" parent="Friends/Camera2D" instance=ExtResource("5_hg6s5")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Settings" type="CanvasLayer" parent="Friends/Camera2D"]
+
+[node name="PauseButton" type="Button" parent="Friends/Camera2D/Settings"]
+custom_minimum_size = Vector2(58, 58)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -63.0
+offset_top = 6.0
+offset_right = -5.0
+offset_bottom = 64.0
+grow_horizontal = 0
+icon = ExtResource("7_tqiix")
+expand_icon = true
 
 [node name="EffortVFX" type="CPUParticles2D" parent="Friends"]
 unique_name_in_owner = true
@@ -224,4 +240,5 @@ shape = SubResource("CapsuleShape2D_kb6p2")
 scale = Vector2(0.42, 0.42)
 texture = ExtResource("13_yllr7")
 
+[connection signal="pressed" from="Friends/Camera2D/Settings/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]

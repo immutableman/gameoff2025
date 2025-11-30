@@ -51,10 +51,11 @@ size_flags_vertical = 6
 layout_mode = 2
 
 [node name="SFXButton" type="Button" parent="."]
+custom_minimum_size = Vector2(58, 58)
 offset_left = 1084.0
 offset_top = 580.0
-offset_right = 1192.0
-offset_bottom = 688.0
-scale = Vector2(0.5, 0.5)
+offset_right = 1142.0
+offset_bottom = 638.0
 icon = ExtResource("4_3f7m4")
+expand_icon = true
 script = ExtResource("5_3f7m4")

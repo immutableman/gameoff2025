@@ -161,3 +161,7 @@ func _unhandled_input(event: InputEvent):
 			# TODO maybe make this generalized
 			var text = $RigidBody2D.interactables.back().get_text()
 			EventBus.show_dialog.emit(text)
+
+
+func _on_pause_button_pressed() -> void:
+	EventBus.pause.emit()
