@@ -1,26 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://8u4b4o80hs0n"]
+[gd_scene load_steps=4 format=3 uid="uid://8u4b4o80hs0n"]
 
 [ext_resource type="Script" uid="uid://f88v3bdewv6q" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+[ext_resource type="Texture2D" uid="uid://q2m1iuprwxvi" path="res://assets/title.png" id="2_3shxk"]
 [ext_resource type="PackedScene" uid="uid://qh23budy3ucv" path="res://main_menu/level_button.tscn" id="4_bws42"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_oa53l")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.98039216, 0.9882353, 0.9372549, 1)
+
+[node name="Title" type="TextureRect" parent="."]
+texture_filter = 4
+offset_top = 64.0
+offset_right = 2048.0
+offset_bottom = 2112.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_3shxk")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -640.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Levels" type="VBoxContainer" parent="CenterContainer"]
+[node name="Levels" type="VBoxContainer" parent="PanelContainer/CenterContainer"]
 unique_name_in_owner = true
 clip_contents = true
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="LevelButton" parent="CenterContainer/Levels" instance=ExtResource("4_bws42")]
+[node name="LevelButton" parent="PanelContainer/CenterContainer/Levels" instance=ExtResource("4_bws42")]
 layout_mode = 2

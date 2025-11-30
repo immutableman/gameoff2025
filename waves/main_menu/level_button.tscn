@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dvgqr117631il" path="res://main_menu/level_button.gd" id="1_8uum3"]
 [ext_resource type="Texture2D" uid="uid://dhyumyh18ftyh" path="res://main_menu/level_blank.tres" id="2_b0hw7"]
 
-[node name="LevelButton" type="CenterContainer"]
+[node name="LevelButton" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
