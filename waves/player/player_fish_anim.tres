@@ -1,7 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://5e13cx8n8obp"]
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://5e13cx8n8obp"]
 
-[ext_resource type="Texture2D" uid="uid://dgbvewdhpela8" path="res://assets/player/fish 1.png" id="1_chive"]
-[ext_resource type="Texture2D" uid="uid://cnbk3ggba222x" path="res://assets/player/fish 2.png" id="2_vll0d"]
+[ext_resource type="Texture2D" uid="uid://bwc4njnrx8wlm" path="res://assets/player/fish 1a.png" id="1_vll0d"]
+[ext_resource type="Texture2D" uid="uid://crco5nrqm51yu" path="res://assets/player/fish 1b.png" id="2_vll0d"]
+[ext_resource type="Texture2D" uid="uid://drd0y0r6q275q" path="res://assets/player/fish 2a.png" id="3_kuqmh"]
 [ext_resource type="Texture2D" uid="uid://cyw02goevqml3" path="res://assets/player/fish 3.png" id="3_x2vh8"]
 [ext_resource type="Texture2D" uid="uid://dbyj41rc0s3pr" path="res://assets/player/fish 4.png" id="4_kuqmh"]
 
@@ -9,12 +10,15 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_chive")
+"texture": ExtResource("1_vll0d")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_vll0d")
 }, {
-"duration": 1.0,
+"duration": 0.9,
+"texture": ExtResource("3_kuqmh")
+}, {
+"duration": 0.9,
 "texture": ExtResource("3_x2vh8")
 }, {
 "duration": 1.0,

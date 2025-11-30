@@ -3,7 +3,7 @@ extends Node2D
 const MAX_SPEED_FOR_ANIM = 500
 const MAX_PLAYRATE_FOR_ANIM = 2.5
 const MAX_ROTATION_DEGREES = 15
-const BOB_HEIGHT: float = 2.0 # How much the sprite bobs up and down
+const BOB_HEIGHT: float = 5.0 # How much the sprite bobs up and down
 const BOB_DURATION: float = .5 # How long one full bob cycle takes
 
 @export var thrust: float = 500
@@ -83,11 +83,19 @@ func _process(delta: float) -> void:
 	elif $RigidBody2D.linear_velocity.x < 0:
 		$%FishAnim.flip_h = false
 
-	#if $RigidBody2D.linear_velocity.x > 0:
-		#move_toward($%FishAnim.rotation_degrees, MAX_ROTATION_DEGREES, )
-		#$%FishAnim.rotation_degrees
+	var t = clamp(speed_factor*8, 0, 1)
+	if $RigidBody2D.linear_velocity.x > 10:
+		# alt: fixed rotation over time
+		#$%FishAnim.rotation_degrees = move_toward($%FishAnim.rotation_degrees, MAX_ROTATION_DEGREES, speed_factor)
+		$%FishAnim.rotation_degrees = lerp(0, MAX_ROTATION_DEGREES, t)  # rotation by speed
+	elif $RigidBody2D.linear_velocity.x < -10:
+		#$%FishAnim.rotation_degrees = move_toward($%FishAnim.rotation_degrees, -MAX_ROTATION_DEGREES, speed_factor)
+		$%FishAnim.rotation_degrees = lerp(0, -MAX_ROTATION_DEGREES, t)  # rotation by speed
+	else:
+		if not Input.is_action_pressed('left') and not Input.is_action_pressed('right'):
+			$%FishAnim.rotation_degrees = move_toward($%FishAnim.rotation_degrees, 0, 1)
 
-	#if $RigidBody2D.linear_velocity.x > 0.1:
+	#if speed_factor > 0.01:
 		#if not _bob_tween:
 			#_bob_tween = create_tween()
 			#_bob_tween.tween_property($%FishAnim, "position:y", -BOB_HEIGHT, BOB_DURATION / 2.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
@@ -95,8 +103,10 @@ func _process(delta: float) -> void:
 			#_bob_tween.set_loops()
 	#else:
 		#if _bob_tween:
+			#$%FishAnim.position.y = 0
 			#_bob_tween.stop()
 			#_bob_tween = null
+
 
 func _physics_process(delta: float) -> void:
 	var force = Vector2.ZERO

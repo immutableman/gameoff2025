@@ -41,8 +41,7 @@ unique_name_in_owner = true
 scale = Vector2(0.42, 0.42)
 sprite_frames = ExtResource("3_ebec5")
 animation = &"run"
-frame = 1
-frame_progress = 0.10443962
+frame_progress = 0.2613204
 
 [node name="BallmarkSprite2D" type="Sprite2D" parent="Friends"]
 position = Vector2(-3, -3)
