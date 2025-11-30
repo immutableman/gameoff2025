@@ -7,11 +7,11 @@ func _on_pause():
 	get_tree().paused = true
 	visible = true
 	$CenterContainer/VBoxContainer/Resume.grab_focus.call_deferred()
-	var sfx_index = AudioServer.get_bus_index("BGM")
+	var sfx_index = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_volume_db(sfx_index, -10)
 
 func _on_resume_pressed() -> void:
-	var sfx_index = AudioServer.get_bus_index("BGM")
+	var sfx_index = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_volume_db(sfx_index, 0)
 	get_tree().paused = false
 	visible = false
