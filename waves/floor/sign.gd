@@ -1,7 +1,7 @@
 @tool
 extends Area2D
 
-@export var text: String = ''
+@export_multiline var text: String = ''
 
 @export var texture = preload("res://assets/sign_info.tres"):
 	set(new_value):

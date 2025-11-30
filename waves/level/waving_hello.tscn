@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://cfp3rlc0ot0o0"]
+[gd_scene load_steps=19 format=4 uid="uid://cfp3rlc0ot0o0"]
 
 [ext_resource type="Script" uid="uid://da4e4hhhpi4wv" path="res://level.gd" id="1_qkx05"]
 [ext_resource type="TileSet" uid="uid://btf83bb1gq54v" path="res://floor/level_tileset.tres" id="2_phop2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dob0ber15buru" path="res://floor/sign.tscn" id="9_7dhdk"]
 [ext_resource type="Texture2D" uid="uid://c87sdmd24f81a" path="res://assets/sign_left.tres" id="10_qkx05"]
 [ext_resource type="PackedScene" uid="uid://bp66wbknaaeu6" path="res://floor/saw.tscn" id="11_phop2"]
+[ext_resource type="Texture2D" uid="uid://deqo4hq28h2u5" path="res://assets/kenney/sign_float.png" id="11_tel3o"]
 
 [sub_resource type="Curve2D" id="Curve2D_qkx05"]
 resource_local_to_scene = true
@@ -131,8 +132,14 @@ position = Vector2(5104, -432)
 
 [node name="Sign" parent="." instance=ExtResource("9_7dhdk")]
 position = Vector2(736, 560)
-text = "This way, Nathan d!"
+text = "[b]Ocean[/b]
+100m =>"
 texture = ExtResource("10_qkx05")
+
+[node name="SignFloat" type="Sprite2D" parent="."]
+position = Vector2(5102, 1)
+rotation = -1.5707964
+texture = ExtResource("11_tel3o")
 
 [editable path="WavePlatform3"]
 [editable path="WavePlatform4"]

@@ -5,3 +5,5 @@
 [resource]
 atlas = ExtResource("1_ifrva")
 region = Rect2(1280, 1536, 128, 128)
+margin = Rect2(2, 2, 2, 2)
+filter_clip = true
