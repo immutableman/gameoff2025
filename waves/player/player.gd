@@ -2,12 +2,21 @@ extends Node2D
 
 const MAX_SPEED_FOR_ANIM = 500
 const MAX_PLAYRATE_FOR_ANIM = 2.5
+const MAX_ROTATION_DEGREES = 15
+const BOB_HEIGHT: float = 2.0 # How much the sprite bobs up and down
+const BOB_DURATION: float = .5 # How long one full bob cycle takes
 
 @export var thrust: float = 500
 
 var external_forces: Dictionary[Node, Vector2] = {}
 var net_external_force: Vector2 = Vector2.ZERO
 var movers: Array[Node] = []
+
+var _bob_tween: Tween
+
+func _ready() -> void:
+	EventBus.player_damaged.connect(_on_damaged)
+	$%FishAnim.play('run')
 
 func get_player_position() -> Vector2:
 	return $%OneWayPoint.global_position
@@ -45,10 +54,6 @@ func exit_level_success(endPos: Vector2) -> void:
 	get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
 
 
-func _ready() -> void:
-	EventBus.player_damaged.connect(_on_damaged)
-	$%FishAnim.play('run')
-
 func _on_damaged():
 	$%EffortVFX.emitting = false
 	$%DeathVFX.emitting = true
@@ -67,8 +72,8 @@ func _do_death_restart() -> void:
 		get_tree().reload_current_scene()
 
 func _process(delta: float) -> void:
-	var speed_factor = clamp(abs($RigidBody2D.linear_velocity.x) / MAX_SPEED_FOR_ANIM, 0, 1)
-	$%FishAnim.speed_scale = lerp(0.0, MAX_PLAYRATE_FOR_ANIM, speed_factor)
+	var speed_factor = clamp(abs($RigidBody2D.linear_velocity.x / MAX_SPEED_FOR_ANIM), 0, 1)
+	$%FishAnim.speed_scale = lerp(0.0, MAX_PLAYRATE_FOR_ANIM, abs(speed_factor))
 	if Input.is_action_pressed('left'):
 		$%FishAnim.flip_h = false
 	elif Input.is_action_pressed('right'):
@@ -77,6 +82,21 @@ func _process(delta: float) -> void:
 		$%FishAnim.flip_h = true
 	elif $RigidBody2D.linear_velocity.x < 0:
 		$%FishAnim.flip_h = false
+
+	#if $RigidBody2D.linear_velocity.x > 0:
+		#move_toward($%FishAnim.rotation_degrees, MAX_ROTATION_DEGREES, )
+		#$%FishAnim.rotation_degrees
+
+	#if $RigidBody2D.linear_velocity.x > 0.1:
+		#if not _bob_tween:
+			#_bob_tween = create_tween()
+			#_bob_tween.tween_property($%FishAnim, "position:y", -BOB_HEIGHT, BOB_DURATION / 2.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+			#_bob_tween.tween_property($%FishAnim, "position:y", 0, BOB_DURATION / 2.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+			#_bob_tween.set_loops()
+	#else:
+		#if _bob_tween:
+			#_bob_tween.stop()
+			#_bob_tween = null
 
 func _physics_process(delta: float) -> void:
 	var force = Vector2.ZERO

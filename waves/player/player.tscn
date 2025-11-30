@@ -38,7 +38,7 @@ texture = ExtResource("2_8t03j")
 
 [node name="FishAnim" type="AnimatedSprite2D" parent="Friends"]
 unique_name_in_owner = true
-scale = Vector2(0.44, 0.44)
+scale = Vector2(0.42, 0.42)
 sprite_frames = ExtResource("3_ebec5")
 animation = &"run"
 frame = 1
