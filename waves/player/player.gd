@@ -59,6 +59,8 @@ func _on_damaged():
 	$RigidBody2D.set_deferred('freeze', true)
 	$%EffortVFX.emitting = false
 	$%DeathVFX.emitting = true
+	$%DropsLeftVFX.emitting = true
+	$%DropsRightVFX.emitting = true
 	$%DeathSFX.play()
 	$RigidBody2D/BallSprite2D.visible = false
 	$Friends/BallmarkSprite2D.visible = false
@@ -80,6 +82,9 @@ func _do_death_restart() -> void:
 		get_tree().reload_current_scene()
 
 func _process(delta: float) -> void:
+	if not $Friends/FishAnim.visible:
+		return
+
 	var speed_factor = clamp(abs($RigidBody2D.linear_velocity.x / MAX_SPEED_FOR_ANIM), 0, 1)
 	$%FishAnim.speed_scale = lerp(0.0, MAX_PLAYRATE_FOR_ANIM, abs(speed_factor))
 	if Input.is_action_pressed('left'):
@@ -117,6 +122,9 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if not $Friends/FishAnim.visible:
+		return
+
 	var force = Vector2.ZERO
 	if movers.size() == 0 and not $RigidBody2D.freeze:
 		if Input.is_action_pressed('left'):
