@@ -49,7 +49,8 @@ func _on_damaged():
 	$%EffortVFX.emitting = false
 	$%DeathVFX.emitting = true
 	$%DeathSFX.play()
-	$RigidBody2D/Sprite2D.modulate = Color.TRANSPARENT
+	$RigidBody2D/BallSprite2D.modulate = Color.TRANSPARENT
+	$Friends/BallmarkSprite2D.modulate = Color.TRANSPARENT
 	_do_death_restart()
 
 func _do_death_restart() -> void:

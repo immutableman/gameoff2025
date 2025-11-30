@@ -1,17 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3ysnreep03yt"]
+[gd_scene load_steps=15 format=3 uid="uid://b3ysnreep03yt"]
 
 [ext_resource type="Script" uid="uid://c55bn1a3526mr" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Texture2D" uid="uid://cnet57c4ptvwe" path="res://assets/fish.png" id="2_8t03j"]
 [ext_resource type="Script" uid="uid://cg86psxfsow3q" path="res://player/player_body.gd" id="2_g6k8r"]
-[ext_resource type="Texture2D" uid="uid://cv7dsle8bh5fc" path="res://assets/kenney_rolling-ball-assets/PNG/Retina/ball_red_large_alt.png" id="2_rkbax"]
+[ext_resource type="Texture2D" uid="uid://cttb8tep64an0" path="res://assets/ballmark.png" id="3_2ieo8"]
 [ext_resource type="Texture2D" uid="uid://ddsehcwb45d0v" path="res://assets/kenney_rolling-ball-assets/PNG/Default/particle_1.png" id="3_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://dd62hbc4dv506" path="res://assets/ball.png" id="3_hg6s5"]
 [ext_resource type="PackedScene" uid="uid://cgadwtoyrojdo" path="res://pause_menu/pause_menu.tscn" id="4_rgyib"]
-[ext_resource type="Texture2D" uid="uid://nvfwy261hre7" path="res://assets/kenney_rolling-ball-assets/PNG/Default/ball_red_small.png" id="4_yw30f"]
 [ext_resource type="PackedScene" uid="uid://q0mnlnuvkp32" path="res://player/dialog.tscn" id="5_hg6s5"]
 [ext_resource type="AudioStream" uid="uid://duglepcgckoyr" path="res://assets/kenney/new-platformer-pack-1.0/Sounds/sfx_disappear.ogg" id="5_qjkh3"]
+[ext_resource type="Texture2D" uid="uid://bm1emnv8y3f46" path="res://assets/ballpart.png" id="7_2ieo8"]
 [ext_resource type="AudioStream" uid="uid://bv2lxw7rfvj1n" path="res://assets/kenney/new-platformer-pack-1.0/Sounds/sfx_coin.ogg" id="7_boad6"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_1ainy"]
-radius = 64.0
 
 [sub_resource type="Gradient" id="Gradient_g1dw6"]
 offsets = PackedFloat32Array(0, 0.3140496, 0.523416, 1)
@@ -21,30 +20,23 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0.105882354, 1, 1, 0.5921569, 0, 1, 
 offsets = PackedFloat32Array(0, 0.80991733, 0.9944904)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ainy"]
+radius = 64.0
+
 [node name="Player" type="Node2D" groups=["player"]]
 z_index = 1
 script = ExtResource("1_oul6g")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-collision_mask = 2
-mass = 0.5
-contact_monitor = true
-max_contacts_reported = 1
-linear_damp = 0.5
-script = ExtResource("2_g6k8r")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_1ainy")
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="RigidBody2D"]
-remote_path = NodePath("../../Friends")
-update_rotation = false
-update_scale = false
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("2_rkbax")
-
 [node name="Friends" type="Node2D" parent="."]
+
+[node name="FishSprite2D" type="Sprite2D" parent="Friends"]
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("2_8t03j")
+
+[node name="BallmarkSprite2D" type="Sprite2D" parent="Friends"]
+position = Vector2(-3, -3)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("3_2ieo8")
 
 [node name="Camera2D" type="Camera2D" parent="Friends"]
 zoom = Vector2(0.7, 0.7)
@@ -82,8 +74,7 @@ color_ramp = SubResource("Gradient_g1dw6")
 unique_name_in_owner = true
 process_mode = 3
 emitting = false
-amount = 16
-texture = ExtResource("4_yw30f")
+texture = ExtResource("7_2ieo8")
 lifetime = 0.79
 one_shot = true
 explosiveness = 0.8
@@ -97,6 +88,8 @@ initial_velocity_min = 235.02
 initial_velocity_max = 359.45
 angular_velocity_min = -384.89
 angular_velocity_max = 325.16
+scale_amount_min = 0.44
+scale_amount_max = 0.44
 color_ramp = SubResource("Gradient_qjkh3")
 
 [node name="DeathSFX" type="AudioStreamPlayer2D" parent="Friends"]
@@ -114,6 +107,28 @@ position = Vector2(0, 56)
 [node name="RollTouchPoint" type="Node2D" parent="Friends"]
 unique_name_in_owner = true
 position = Vector2(0, -24)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_mask = 2
+mass = 0.5
+contact_monitor = true
+max_contacts_reported = 1
+linear_damp = 0.5
+script = ExtResource("2_g6k8r")
+
+[node name="BallSprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(-3, -2)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("3_hg6s5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+visible = false
+shape = SubResource("CircleShape2D_1ainy")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="RigidBody2D"]
+remote_path = NodePath("../../Friends")
+update_rotation = false
+update_scale = false
 
 [node name="EndTimer" type="Timer" parent="."]
 one_shot = true
