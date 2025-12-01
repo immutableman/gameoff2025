@@ -68,6 +68,9 @@ position = Vector2(2496, 560)
 [node name="Saw2" parent="." instance=ExtResource("5_npeyn")]
 position = Vector2(2656, 480)
 
+[node name="Saw5" parent="." instance=ExtResource("5_npeyn")]
+position = Vector2(3808, 528)
+
 [node name="Saw3" parent="." instance=ExtResource("5_npeyn")]
 position = Vector2(5856, 528)
 
