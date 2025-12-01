@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://qmkyn4q56m5e"]
+[gd_scene load_steps=16 format=4 uid="uid://qmkyn4q56m5e"]
 
 [ext_resource type="TileSet" uid="uid://btf83bb1gq54v" path="res://floor/level_tileset.tres" id="1_xm3yq"]
 [ext_resource type="TileSet" uid="uid://dg5k426fiw368" path="res://floor/hazard_tileset.tres" id="2_ur7pq"]
@@ -9,18 +9,23 @@
 [ext_resource type="PackedScene" uid="uid://mprbtp26q0sl" path="res://floor/goal.tscn" id="7_3ugfa"]
 [ext_resource type="PackedScene" uid="uid://f4f0ew5k46yd" path="res://floor/wave_platform.tscn" id="8_7bibn"]
 [ext_resource type="PackedScene" uid="uid://bw4vtclnulclg" path="res://floor/bounce_pad.tscn" id="9_bdgwi"]
+[ext_resource type="PackedScene" uid="uid://ksu1roi6pr2d" path="res://floor/force_zone.tscn" id="10_403sb"]
 [ext_resource type="PackedScene" uid="uid://5k3y8w1eansc" path="res://floor/key.tscn" id="10_arqtl"]
 [ext_resource type="Texture2D" uid="uid://deqo4hq28h2u5" path="res://assets/kenney/sign_float.png" id="11_acvkd"]
 [ext_resource type="PackedScene" uid="uid://dob0ber15buru" path="res://floor/sign.tscn" id="12_ur7pq"]
 
+[sub_resource type="Curve" id="Curve_ur7pq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25327513, 1), 0.0, 0.0, 0, 0, Vector2(0.7532751, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
 [sub_resource type="Curve2D" id="Curve2D_403sb"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 256, 48, 0, 0, 0, 0, 784, 48)
+"points": PackedVector2Array(0, 0, 0, 0, 368, 16, 0, 0, 0, 0, 528, 16)
 }
 point_count = 2
 
-[node name="Template" type="Node2D"]
+[node name="placeholder" type="Node2D"]
 
 [node name="BG" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD+//7/AgAAAAAAAAD+////AgAAAAAAAAD+/wAAAgAAAAAAAAD+/wEAAgAAAAAAAAD+/wIAAgAAAAAAAAD+/wMAAgAAAAAAAAD+/wQAAgAAAAAAAAD+/wUAAgAAAAAAAAD+/wYAAgAAAAAAAAD///7/AgAAAAAAAAD/////AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD//wIAAgAAAAAAAAD//wMAAgAAAAAAAAD//wQAAgAAAAAAAAD//wUAAgAAAAAAAAD//wYAAgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAABAP7/AgAAAAAAAAABAP//AgAAAAAAAAABAAAAAgAAAAAAAAABAAEAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAABAAUAAgAAAAAAAAABAAYAAgAAAAAAAAACAP7/AgAAAAAAAAACAP//AgAAAAAAAAACAAAAAgAAAAAAAAACAAEAAgAAAAAAAAACAAIAAgAAAAAAAAACAAMAAgAAAAAAAAACAAQAAgAAAAAAAAACAAUAAgAAAAAAAAACAAYAAgAAAAAAAAADAP7/AgAAAAAAAAADAP//AgAAAAAAAAADAAAAAgAAAAAAAAADAAEAAgAAAAAAAAADAAIAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAADAAUAAgAAAAAAAAADAAYAAgAAAAAAAAAEAP7/AgAAAAAAAAAEAP//AgAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAgAAAAAAAAAEAAIAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAUAAgAAAAAAAAAEAAYAAgAAAAAAAAAFAP7/AgAAAAAAAAAFAP//AgAAAAAAAAAFAAAAAgAAAAAAAAAFAAEAAgAAAAAAAAAFAAIAAgAAAAAAAAAFAAMAAgAAAAAAAAAFAAQAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAYAAgAAAAAAAAAGAP7/AgAAAAAAAAAGAP//AgAAAAAAAAAGAAAAAgAAAAAAAAAGAAEAAgAAAAAAAAAGAAIAAgAAAAAAAAAGAAMAAgAAAAAAAAAGAAQAAgAAAAAAAAAGAAUAAgAAAAAAAAAGAAYAAgAAAAAAAAAHAP7/AgAAAAAAAAAHAP//AgAAAAAAAAAHAAAAAgAAAAAAAAAHAAEAAgAAAAAAAAAHAAIAAgAAAAAAAAAHAAMAAgAAAAAAAAAHAAQAAgAAAAAAAAAHAAUAAgAAAAAAAAAHAAYAAgAAAAAAAAAIAP7/AgAAAAAAAAAIAP//AgAAAAAAAAAIAAAAAgAAAAAAAAAIAAEAAgAAAAAAAAAIAAIAAgAAAAAAAAAIAAMAAgAAAAAAAAAIAAQAAgAAAAAAAAAIAAUAAgAAAAAAAAAIAAYAAgAAAAAAAAAJAP7/AgAAAAAAAAAJAP//AgAAAAAAAAAJAAAAAgAAAAAAAAAJAAEAAgAAAAAAAAAJAAIAAgAAAAAAAAAJAAMAAgAAAAAAAAAJAAQAAgAAAAAAAAAJAAUAAgAAAAAAAAAJAAYAAgAAAAAAAAAKAP7/AgAAAAAAAAAKAP//AgAAAAAAAAAKAAAAAgAAAAAAAAAKAAEAAgAAAAAAAAAKAAIAAgAAAAAAAAAKAAMAAgAAAAAAAAAKAAQAAgAAAAAAAAAKAAUAAgAAAAAAAAAKAAYAAgAAAAAAAAALAP7/AgAAAAAAAAALAP//AgAAAAAAAAALAAAAAgAAAAAAAAALAAEAAgAAAAAAAAALAAIAAgAAAAAAAAALAAMAAgAAAAAAAAALAAQAAgAAAAAAAAALAAUAAgAAAAAAAAALAAYAAgAAAAAAAAAMAP7/AgAAAAAAAAAMAP//AgAAAAAAAAAMAAAAAgAAAAAAAAAMAAEAAgAAAAAAAAAMAAIAAgAAAAAAAAAMAAMAAgAAAAAAAAAMAAQAAgAAAAAAAAAMAAUAAgAAAAAAAAAMAAYAAgAAAAAAAAANAP7/AgAAAAAAAAANAP//AgAAAAAAAAANAAAAAgAAAAAAAAANAAEAAgAAAAAAAAANAAIAAgAAAAAAAAANAAMAAgAAAAAAAAANAAQAAgAAAAAAAAANAAUAAgAAAAAAAAANAAYAAgAAAAAAAAAOAP7/AgAAAAAAAAAOAP//AgAAAAAAAAAOAAAAAgAAAAAAAAAOAAEAAgAAAAAAAAAOAAIAAgAAAAAAAAAOAAMAAgAAAAAAAAAOAAQAAgAAAAAAAAAOAAUAAgAAAAAAAAAOAAYAAgAAAAAAAAAPAP7/AgAAAAAAAAAPAP//AgAAAAAAAAAPAAAAAgAAAAAAAAAPAAEAAgAAAAAAAAAPAAIAAgAAAAAAAAAPAAMAAgAAAAAAAAAPAAQAAgAAAAAAAAAPAAUAAgAAAAAAAAAPAAYAAgAAAAAAAAAQAP7/AgAAAAAAAAAQAP//AgAAAAAAAAAQAAAAAgAAAAAAAAAQAAEAAgAAAAAAAAAQAAIAAgAAAAAAAAAQAAMAAgAAAAAAAAAQAAQAAgAAAAAAAAAQAAUAAgAAAAAAAAAQAAYAAgAAAAAAAAA=")
@@ -32,26 +37,29 @@ tile_set = ExtResource("2_ur7pq")
 
 [node name="FG" type="TileMapLayer" parent="."]
 position = Vector2(-16, -16)
+tile_map_data = PackedByteArray("AAD+/wEAAAAHAAYAAAD//wEAAAAHAAcAAAAAAAEAAAAHAAcAAAABAAEAAAAHAAUAAAA=")
 tile_set = ExtResource("4_llfby")
 script = ExtResource("5_aajrm")
 
 [node name="Player" parent="." instance=ExtResource("6_ytgef")]
+position = Vector2(0, 48)
 
 [node name="Goal" parent="." instance=ExtResource("7_3ugfa")]
-position = Vector2(992, 608)
+position = Vector2(-160, 608)
 
 [node name="WavePlatform" parent="." instance=ExtResource("8_7bibn")]
 position = Vector2(-736, -464)
+amplitude_curve = SubResource("Curve_ur7pq")
 
 [node name="Path2D" parent="WavePlatform" index="0"]
-position = Vector2(272, 512)
+position = Vector2(688, 832)
 curve = SubResource("Curve2D_403sb")
 
 [node name="SpringPad" parent="." instance=ExtResource("3_403sb")]
-offset_left = 128.0
-offset_top = 688.0
-offset_right = 353.0
-offset_bottom = 763.0
+offset_left = -624.0
+offset_top = 480.0
+offset_right = -399.0
+offset_bottom = 555.0
 speed = 975.0
 seconds_to_max_speed = 0.01
 metadata/_edit_use_anchors_ = true
@@ -60,23 +68,31 @@ metadata/_edit_use_anchors_ = true
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -80.0
-offset_top = 448.0
-offset_right = 145.0
-offset_bottom = 523.0
+offset_left = -720.0
+offset_top = 48.0
+offset_right = -495.0
+offset_bottom = 123.0
 grow_horizontal = 1
 grow_vertical = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Key" parent="." instance=ExtResource("10_arqtl")]
-position = Vector2(1312, 656)
+[node name="ForceZone" parent="." instance=ExtResource("10_403sb")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_top = 384.0
+offset_right = 240.0
+offset_bottom = 560.0
+grow_vertical = 1
 
-[node name="SignFloat" type="Sprite2D" parent="."]
-position = Vector2(432, 528)
-texture = ExtResource("11_acvkd")
+[node name="Key" parent="." instance=ExtResource("10_arqtl")]
+position = Vector2(-720, 656)
 
 [node name="Sign" parent="." instance=ExtResource("12_ur7pq")]
-position = Vector2(736, 560)
+position = Vector2(-944, 384)
 text = "Enter text"
+
+[node name="SignFloat" type="Sprite2D" parent="."]
+position = Vector2(-928, 624)
+texture = ExtResource("11_acvkd")
 
 [editable path="WavePlatform"]

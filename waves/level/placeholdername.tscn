@@ -1,0 +1,274 @@
+[gd_scene load_steps=16 format=4 uid="uid://bkcbh47y8peqx"]
+
+[ext_resource type="TileSet" uid="uid://btf83bb1gq54v" path="res://floor/level_tileset.tres" id="1_nufgd"]
+[ext_resource type="TileSet" uid="uid://dg5k426fiw368" path="res://floor/hazard_tileset.tres" id="2_pqfcb"]
+[ext_resource type="TileSet" uid="uid://2p6ck3a16vgb" path="res://floor/platform_tileset.tres" id="3_jbmdj"]
+[ext_resource type="Script" uid="uid://pbce2pgoammh" path="res://tilemap/tilemap_foreground.gd" id="4_pifbv"]
+[ext_resource type="PackedScene" uid="uid://b3ysnreep03yt" path="res://player/player.tscn" id="5_t6os0"]
+[ext_resource type="PackedScene" uid="uid://mprbtp26q0sl" path="res://floor/goal.tscn" id="6_6m5bq"]
+[ext_resource type="PackedScene" uid="uid://f4f0ew5k46yd" path="res://floor/wave_platform.tscn" id="7_laker"]
+[ext_resource type="PackedScene" uid="uid://eqaxx4xo3kum" path="res://floor/spring_pad.tscn" id="8_p7icx"]
+[ext_resource type="PackedScene" uid="uid://bw4vtclnulclg" path="res://floor/bounce_pad.tscn" id="9_qa3yc"]
+[ext_resource type="PackedScene" uid="uid://ksu1roi6pr2d" path="res://floor/force_zone.tscn" id="10_pqfcb"]
+[ext_resource type="PackedScene" uid="uid://5k3y8w1eansc" path="res://floor/key.tscn" id="10_x50eg"]
+[ext_resource type="Texture2D" uid="uid://deqo4hq28h2u5" path="res://assets/kenney/sign_float.png" id="11_fkivu"]
+[ext_resource type="PackedScene" uid="uid://dob0ber15buru" path="res://floor/sign.tscn" id="12_srqes"]
+
+[sub_resource type="Curve" id="Curve_pqfcb"]
+_data = [Vector2(0.19868997, 1), 0.0, 0.0, 0, 0, Vector2(0.25327513, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_jbmdj"]
+resource_local_to_scene = true
+bake_interval = 2.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -192, 0, 0, 0, 0, 256, -64, 0, 0, 0, 0, 512, -64, 0, 0, 0, 0, 784, 48)
+}
+point_count = 4
+
+[node name="The Force" type="Node2D"]
+
+[node name="BG" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+//7/AgAAAAAAAAD+////AgAAAAAAAAD+/wAAAgAAAAAAAAD+/wEAAgAAAAAAAAD+/wIAAgAAAAAAAAD+/wMAAgAAAAAAAAD+/wQAAgAAAAAAAAD+/wUAAgAAAAAAAAD+/wYAAgAAAAAAAAD///7/AgAAAAAAAAD/////AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD//wIAAgAAAAAAAAD//wMAAgAAAAAAAAD//wQAAgAAAAAAAAD//wUAAgAAAAAAAAD//wYAAgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAABAP7/AgAAAAAAAAABAP//AgAAAAAAAAABAAAAAgAAAAAAAAABAAEAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAABAAUAAgAAAAAAAAABAAYAAgAAAAAAAAACAP7/AgAAAAAAAAACAP//AgAAAAAAAAACAAAAAgAAAAAAAAACAAEAAgAAAAAAAAACAAIAAgAAAAAAAAACAAMAAgAAAAAAAAACAAQAAgAAAAAAAAACAAUAAgAAAAAAAAACAAYAAgAAAAAAAAADAP7/AgAAAAAAAAADAP//AgAAAAAAAAADAAAAAgAAAAAAAAADAAEAAgAAAAAAAAADAAIAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAADAAUAAgAAAAAAAAADAAYAAgAAAAAAAAAEAP7/AgAAAAAAAAAEAP//AgAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAgAAAAAAAAAEAAIAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAUAAgAAAAAAAAAEAAYAAgAAAAAAAAAFAP7/AgAAAAAAAAAFAP//AgAAAAAAAAAFAAAAAgAAAAAAAAAFAAEAAgAAAAAAAAAFAAIAAgAAAAAAAAAFAAMAAgAAAAAAAAAFAAQAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAYAAgAAAAAAAAAGAP7/AgAAAAAAAAAGAP//AgAAAAAAAAAGAAAAAgAAAAAAAAAGAAEAAgAAAAAAAAAGAAIAAgAAAAAAAAAGAAMAAgAAAAAAAAAGAAQAAgAAAAAAAAAGAAUAAgAAAAAAAAAGAAYAAgAAAAAAAAAHAP7/AgAAAAAAAAAHAP//AgAAAAAAAAAHAAAAAgAAAAAAAAAHAAEAAgAAAAAAAAAHAAIAAgAAAAAAAAAHAAMAAgAAAAAAAAAHAAQAAgAAAAAAAAAHAAUAAgAAAAAAAAAHAAYAAgAAAAAAAAAIAP7/AgAAAAAAAAAIAP//AgAAAAAAAAAIAAAAAgAAAAAAAAAIAAEAAgAAAAAAAAAIAAIAAgAAAAAAAAAIAAMAAgAAAAAAAAAIAAQAAgAAAAAAAAAIAAUAAgAAAAAAAAAIAAYAAgAAAAAAAAAJAP7/AgAAAAAAAAAJAP//AgAAAAAAAAAJAAAAAgAAAAAAAAAJAAEAAgAAAAAAAAAJAAIAAgAAAAAAAAAJAAMAAgAAAAAAAAAJAAQAAgAAAAAAAAAJAAUAAgAAAAAAAAAJAAYAAgAAAAAAAAAKAP7/AgAAAAAAAAAKAP//AgAAAAAAAAAKAAAAAgAAAAAAAAAKAAEAAgAAAAAAAAAKAAIAAgAAAAAAAAAKAAMAAgAAAAAAAAAKAAQAAgAAAAAAAAAKAAUAAgAAAAAAAAAKAAYAAgAAAAAAAAALAP7/AgAAAAAAAAALAP//AgAAAAAAAAALAAAAAgAAAAAAAAALAAEAAgAAAAAAAAALAAIAAgAAAAAAAAALAAMAAgAAAAAAAAALAAQAAgAAAAAAAAALAAUAAgAAAAAAAAALAAYAAgAAAAAAAAAMAP7/AgAAAAAAAAAMAP//AgAAAAAAAAAMAAAAAgAAAAAAAAAMAAEAAgAAAAAAAAAMAAIAAgAAAAAAAAAMAAMAAgAAAAAAAAAMAAQAAgAAAAAAAAAMAAUAAgAAAAAAAAAMAAYAAgAAAAAAAAANAP7/AgAAAAAAAAANAP//AgAAAAAAAAANAAAAAgAAAAAAAAANAAEAAgAAAAAAAAANAAIAAgAAAAAAAAANAAMAAgAAAAAAAAANAAQAAgAAAAAAAAANAAUAAgAAAAAAAAANAAYAAgAAAAAAAAAOAP7/AgAAAAAAAAAOAP//AgAAAAAAAAAOAAAAAgAAAAAAAAAOAAEAAgAAAAAAAAAOAAIAAgAAAAAAAAAOAAMAAgAAAAAAAAAOAAQAAgAAAAAAAAAOAAUAAgAAAAAAAAAOAAYAAgAAAAAAAAAPAP7/AgAAAAAAAAAPAP//AgAAAAAAAAAPAAAAAgAAAAAAAAAPAAEAAgAAAAAAAAAPAAIAAgAAAAAAAAAPAAMAAgAAAAAAAAAPAAQAAgAAAAAAAAAPAAUAAgAAAAAAAAAPAAYAAgAAAAAAAAAQAP7/AgAAAAAAAAAQAP//AgAAAAAAAAAQAAAAAgAAAAAAAAAQAAEAAgAAAAAAAAAQAAIAAgAAAAAAAAAQAAMAAgAAAAAAAAAQAAQAAgAAAAAAAAAQAAUAAgAAAAAAAAAQAAYAAgAAAAAAAAA=")
+tile_set = ExtResource("1_nufgd")
+
+[node name="Hazards" type="TileMapLayer" parent="."]
+position = Vector2(-16, -16)
+tile_map_data = PackedByteArray("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AAAdAO//AQAKAA4AAAAcAO//AQAKAA4AAAAbAO//AQAKAA4AAAAaAO//AQAKAA4AAAAZAO//AQAKAA4AAAAYAO//AQAKAA4AAAAXAO//AQAKAA4AAAAWAO//AQAKAA4AAAAVAO//AQAKAA4AAAAUAO//AQAKAA4AAAATAO//AQAKAA4AAAASAO//AQAKAA4AAAARAO//AQAKAA4AAAAQAO//AQAKAA4AAAAPAO//AQAKAA4AAAAOAO//AQAKAA4AAAANAO//AQAKAA4AAAAMAO//AQAKAA4AAAALAO//AQAKAA4AAAAKAO//AQAKAA4AAAAJAO//AQAKAA4AAAAJAO7/AQAKAA4AAAAJAO3/AQAKAA4AAAAJAOz/AQAKAA4AAAAJAOv/AQAKAA4AAAAJAOr/AQAKAA4AAAAJAOn/AQAKAA4AAAAJAOj/AQAKAA4AAAAJAOf/AQAKAA4AAAAJAOb/AQAKAA4AAAAJAOX/AQAKAA4AAAAJAOD/AQAKAA4AAAAJAN//AQAKAA4AAAAJAOH/AQAKAA4AAAAJAOL/AQAKAA4AAAAJAOP/AQAKAA4AAAAJAOT/AQAKAA4AAAAJAN7/AQAKAA4AAAAJAN3/AQAKAA4AAAAJANz/AQAKAA4AAAAJANv/AQAKAA4AAAAJANr/AQAKAA4AAAAJANn/AQAKAA4AAAAJANj/AQAKAA4AAAAJANf/AQAKAA4AAAAKANf/AQAKAA4AAAALANf/AQAKAA4AAAAMANf/AQAKAA4AAAANANf/AQAKAA4AAAAOANf/AQAKAA4AAAAPANf/AQAKAA4AAAAQANf/AQAKAA4AAAARANf/AQAKAA4AAAASANf/AQAKAA4AAAATANf/AQAKAA4AAAAUANf/AQAKAA4AAAAVANf/AQAKAA4AAAAWANf/AQAKAA4AAAAXANf/AQAKAA4AAAAYANf/AQAKAA4AAAA=")
+tile_set = ExtResource("2_pqfcb")
+
+[node name="ForceZone3" parent="." instance=ExtResource("10_pqfcb")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = 1865.4171
+offset_top = -16.837715
+offset_right = 2332.7986
+offset_bottom = 178.2044
+grow_vertical = 1
+rotation = 4.1887903
+thrust = 1000.0
+
+[node name="FG" type="TileMapLayer" parent="."]
+position = Vector2(-16, -16)
+tile_map_data = PackedByteArray("AAD+/wEAAAAHAAYAAAABAAEAAAAHAAUAAAAAAAEAAAAHAAcAAAD//wEAAAAHAAcAAAAOAP//AAAHAAYAAAASAP//AAAHAA4AAAAPAP//AAAHAAcAAAAQAP//AAAHAAcAAAARAP//AAAHAAcAAAASAAAAAAAGABAAAAASAAMAAAAHAAYAAAAWAAMAAAAHAAUAAAATAAMAAAAHAAcAAAAUAAMAAAAHAAcAAAAVAAMAAAAHAAcAAAASAAIAAAAQAAAAAAA=")
+tile_set = ExtResource("3_jbmdj")
+script = ExtResource("4_pifbv")
+
+[node name="Player" parent="." instance=ExtResource("5_t6os0")]
+position = Vector2(32, 48)
+
+[node name="Goal" parent="." instance=ExtResource("6_6m5bq")]
+position = Vector2(1152, -2432)
+
+[node name="SpringPad" parent="." instance=ExtResource("8_p7icx")]
+offset_left = 2704.0
+offset_top = -1472.0
+offset_right = 2929.0
+offset_bottom = -1397.0
+speed = 450.0
+seconds_to_max_speed = 0.01
+metadata/_edit_use_anchors_ = true
+
+[node name="WavePlatform" parent="." instance=ExtResource("7_laker")]
+position = Vector2(-736, -464)
+speed = 450.0
+amplitude = 150.0
+amplitude_curve = SubResource("Curve_pqfcb")
+
+[node name="Path2D" parent="WavePlatform" index="0"]
+position = Vector2(3168, -880)
+curve = SubResource("Curve2D_jbmdj")
+
+[node name="BouncePad2" parent="." instance=ExtResource("9_qa3yc")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1024.0
+offset_top = 128.0
+offset_right = 1249.0
+offset_bottom = 203.0
+grow_horizontal = 1
+grow_vertical = 1
+rotation = -0.13962634
+metadata/_edit_use_anchors_ = true
+
+[node name="BouncePad3" parent="." instance=ExtResource("9_qa3yc")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 4384.0
+offset_top = 96.00009
+offset_right = 4684.0
+offset_bottom = 171.00009
+grow_horizontal = 1
+grow_vertical = 1
+rotation = -1.0471976
+metadata/_edit_use_anchors_ = true
+
+[node name="BouncePad5" parent="." instance=ExtResource("9_qa3yc")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 4096.0
+offset_top = -543.9999
+offset_right = 4396.0
+offset_bottom = -468.99988
+grow_horizontal = 1
+grow_vertical = 1
+rotation = -1.0471976
+metadata/_edit_use_anchors_ = true
+
+[node name="BouncePad6" parent="." instance=ExtResource("9_qa3yc")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 4400.0
+offset_top = -944.0001
+offset_right = 4700.0
+offset_bottom = -869.0001
+grow_horizontal = 1
+grow_vertical = 1
+rotation = -0.7853982
+metadata/_edit_use_anchors_ = true
+
+[node name="BouncePad4" parent="." instance=ExtResource("9_qa3yc")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 3744.0002
+offset_top = -303.99997
+offset_right = 4044.0
+offset_bottom = -228.99997
+grow_horizontal = 1
+grow_vertical = 1
+rotation = -2.0943952
+metadata/_edit_use_anchors_ = true
+
+[node name="ForceZone" parent="." instance=ExtResource("10_pqfcb")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = 272.0
+offset_top = -32.0
+offset_right = 512.0
+offset_bottom = 144.0
+grow_vertical = 1
+
+[node name="ForceZone2" parent="." instance=ExtResource("10_pqfcb")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = 1074.3248
+offset_top = -128.00002
+offset_right = 1394.872
+offset_bottom = 53.196472
+grow_vertical = 1
+rotation = 3.1415927
+thrust = 2000.0
+
+[node name="ForceZone4" parent="." instance=ExtResource("10_pqfcb")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = 2416.0
+offset_top = -96.0
+offset_right = 2736.0
+offset_bottom = -32.0
+grow_vertical = 1
+thrust = 1200.0
+
+[node name="ForceZone5" parent="." instance=ExtResource("10_pqfcb")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = 2752.0
+offset_top = -336.0
+offset_right = 2880.0
+offset_bottom = -32.0
+grow_vertical = 1
+thrust = 900.0
+
+[node name="ForceZone6" parent="." instance=ExtResource("10_pqfcb")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = 3070.2253
+offset_top = 109.394
+offset_right = 3330.0986
+offset_bottom = 300.39374
+grow_vertical = 1
+rotation = 1.5707964
+
+[node name="ForceZone7" parent="." instance=ExtResource("10_pqfcb")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = 3072.0
+offset_top = 112.0
+offset_right = 3360.0
+offset_bottom = 366.99976
+grow_vertical = 1
+thrust = 1200.0
+
+[node name="ForceZone8" parent="." instance=ExtResource("10_pqfcb")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = 3521.943
+offset_top = -1084.7808
+offset_right = 3739.3472
+offset_bottom = -649.8677
+grow_vertical = 1
+rotation = 0.5235988
+thrust = 1000.0
+
+[node name="ForceZone9" parent="." instance=ExtResource("10_pqfcb")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = 3504.0002
+offset_top = -1088.0
+offset_right = 3934.3342
+offset_bottom = -869.3352
+grow_vertical = 1
+rotation = 2.0943952
+thrust = 1200.0
+
+[node name="ForceZone10" parent="." instance=ExtResource("10_pqfcb")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = 944.0
+offset_top = -1680.0
+offset_right = 1374.334
+offset_bottom = -1344.0
+grow_vertical = 1
+thrust = 1200.0
+
+[node name="Key" parent="." instance=ExtResource("10_x50eg")]
+position = Vector2(-640, -1360)
+
+[node name="SignFloat" type="Sprite2D" parent="."]
+position = Vector2(864, -1408)
+texture = ExtResource("11_fkivu")
+
+[node name="SignFloat5" type="Sprite2D" parent="."]
+position = Vector2(4048, -1056)
+texture = ExtResource("11_fkivu")
+
+[node name="SignFloat6" type="Sprite2D" parent="."]
+position = Vector2(3712, -768)
+rotation = 3.1415927
+texture = ExtResource("11_fkivu")
+
+[node name="SignFloat4" type="Sprite2D" parent="."]
+position = Vector2(1152, -1792)
+rotation = -1.5707964
+texture = ExtResource("11_fkivu")
+
+[node name="SignFloat2" type="Sprite2D" parent="."]
+position = Vector2(2560, -192)
+rotation = 1.5707964
+texture = ExtResource("11_fkivu")
+
+[node name="SignFloat3" type="Sprite2D" parent="."]
+position = Vector2(2752, -432)
+rotation = -1.5707964
+texture = ExtResource("11_fkivu")
+
+[node name="Sign" parent="." instance=ExtResource("12_srqes")]
+position = Vector2(-592, -1744)
+text = "Enter text"
+
+[editable path="WavePlatform"]
