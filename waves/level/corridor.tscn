@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://5k3y8w1eansc" path="res://floor/key.tscn" id="10_g6dq8"]
 [ext_resource type="Texture2D" uid="uid://deqo4hq28h2u5" path="res://assets/kenney/sign_float.png" id="11_eagrm"]
 
-[sub_resource type="Curve2D" id="Curve2D_g6dq8"]
+[sub_resource type="Curve2D" id="Curve2D_eagrm"]
 resource_local_to_scene = true
 bake_interval = 3.0
 _data = {
@@ -20,7 +20,7 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_eagrm"]
+[sub_resource type="Curve2D" id="Curve2D_b7jvk"]
 resource_local_to_scene = true
 bake_interval = 3.0
 _data = {
@@ -28,19 +28,11 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_b7jvk"]
-resource_local_to_scene = true
-bake_interval = 3.0
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -896, -736, 0, 0, 0, 0, -304, -672)
-}
-point_count = 2
-
 [sub_resource type="Curve2D" id="Curve2D_b1qnd"]
 resource_local_to_scene = true
 bake_interval = 3.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1040, -1392, 0, 0, 0, 0, -272, -624)
+"points": PackedVector2Array(0, 0, 0, 0, -896, -736, 0, 0, 0, 0, -304, -672)
 }
 point_count = 2
 
@@ -53,6 +45,14 @@ _data = {
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_jgjmt"]
+resource_local_to_scene = true
+bake_interval = 3.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1040, -1392, 0, 0, 0, 0, -272, -624)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_5x7iw"]
 resource_local_to_scene = true
 bake_interval = 3.0
 _data = {
@@ -86,7 +86,7 @@ tile_set = ExtResource("3_g6dq8")
 script = ExtResource("4_yo1ya")
 
 [node name="Player" parent="." instance=ExtResource("4_eagrm")]
-position = Vector2(784, 48)
+position = Vector2(768, -16)
 
 [node name="Goal" parent="." instance=ExtResource("5_b7jvk")]
 position = Vector2(3424, -1376)
@@ -98,7 +98,7 @@ amplitude = 700.0
 
 [node name="Path2D" parent="WavePlatform" index="0"]
 position = Vector2(1488, 1200)
-curve = SubResource("Curve2D_g6dq8")
+curve = SubResource("Curve2D_eagrm")
 
 [node name="WavePlatform3" parent="." instance=ExtResource("6_b1qnd")]
 position = Vector2(3872, -576)
@@ -108,7 +108,7 @@ amplitude = 150.0
 
 [node name="Path2D" parent="WavePlatform3" index="0"]
 position = Vector2(-4464, -16)
-curve = SubResource("Curve2D_eagrm")
+curve = SubResource("Curve2D_b7jvk")
 
 [node name="WavePlatform4" parent="." instance=ExtResource("6_b1qnd")]
 position = Vector2(3808, -1264)
@@ -118,7 +118,7 @@ amplitude = 0.0
 
 [node name="Path2D" parent="WavePlatform4" index="0"]
 position = Vector2(-4896, 880)
-curve = SubResource("Curve2D_b7jvk")
+curve = SubResource("Curve2D_b1qnd")
 
 [node name="WavePlatform5" parent="." instance=ExtResource("6_b1qnd")]
 position = Vector2(4192, -368)
@@ -127,7 +127,7 @@ wavelength = 175.0
 
 [node name="Path2D" parent="WavePlatform5" index="0"]
 position = Vector2(-5488, 816)
-curve = SubResource("Curve2D_b1qnd")
+curve = SubResource("Curve2D_5k4rl")
 
 [node name="WavePlatform6" parent="." instance=ExtResource("6_b1qnd")]
 position = Vector2(3280, -320)
@@ -136,7 +136,7 @@ wavelength = 175.0
 
 [node name="Path2D" parent="WavePlatform6" index="0"]
 position = Vector2(-5488, 624)
-curve = SubResource("Curve2D_5k4rl")
+curve = SubResource("Curve2D_jgjmt")
 
 [node name="WavePlatform2" parent="." instance=ExtResource("6_b1qnd")]
 position = Vector2(-304, -1056)
@@ -147,7 +147,7 @@ offset = 100.0
 
 [node name="Path2D" parent="WavePlatform2" index="0"]
 position = Vector2(3008, 752)
-curve = SubResource("Curve2D_jgjmt")
+curve = SubResource("Curve2D_5x7iw")
 
 [node name="SpringPad" parent="." instance=ExtResource("7_5k4rl")]
 offset_left = -1824.0

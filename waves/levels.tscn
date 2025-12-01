@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bru3j1b4p3c5u"]
+[gd_scene load_steps=14 format=3 uid="uid://bru3j1b4p3c5u"]
 
 [ext_resource type="Script" uid="uid://btyfqqfhrkshr" path="res://levels.gd" id="1_48rmr"]
 [ext_resource type="Script" uid="uid://dlgbxo63gfwag" path="res://main_menu/level_data.gd" id="2_b0aun"]
 [ext_resource type="PackedScene" uid="uid://cfp3rlc0ot0o0" path="res://level/waving_hello.tscn" id="4_ci5qh"]
 [ext_resource type="PackedScene" uid="uid://cvhd5l0upmfud" path="res://level/a_series_of_tubes.tscn" id="5_04tao"]
+[ext_resource type="PackedScene" uid="uid://bkcbh47y8peqx" path="res://level/the_force.tscn" id="5_ci5qh"]
 [ext_resource type="PackedScene" uid="uid://c8mgkejyuprkh" path="res://level/crossing_the_ocean.tscn" id="6_283no"]
 [ext_resource type="PackedScene" uid="uid://dlidl48i6dbip" path="res://level/corridor.tscn" id="7_x8mww"]
 [ext_resource type="AudioStream" uid="uid://bkuk01ly5umiq" path="res://assets/abstractionmusic/Sketchbook 2024-10-14.ogg" id="8_ci5qh"]
@@ -20,6 +21,12 @@ display_name = "A Series of Tubes (Not a Dump Truck)"
 scene = ExtResource("5_04tao")
 metadata/_custom_type_script = "uid://dlgbxo63gfwag"
 
+[sub_resource type="Resource" id="Resource_04tao"]
+script = ExtResource("2_b0aun")
+display_name = "The Force"
+scene = ExtResource("5_ci5qh")
+metadata/_custom_type_script = "uid://dlgbxo63gfwag"
+
 [sub_resource type="Resource" id="Resource_ia84y"]
 script = ExtResource("2_b0aun")
 display_name = "Crossing the Ocean"
@@ -34,7 +41,7 @@ metadata/_custom_type_script = "uid://dlgbxo63gfwag"
 
 [node name="Levels" type="Node"]
 script = ExtResource("1_48rmr")
-level_list = Array[ExtResource("2_b0aun")]([SubResource("Resource_6tl50"), SubResource("Resource_t6bnd"), SubResource("Resource_ia84y"), SubResource("Resource_ci5qh")])
+level_list = Array[ExtResource("2_b0aun")]([SubResource("Resource_6tl50"), SubResource("Resource_t6bnd"), SubResource("Resource_04tao"), SubResource("Resource_ia84y"), SubResource("Resource_ci5qh")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3

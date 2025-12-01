@@ -18,22 +18,22 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_qw1hf"]
+[sub_resource type="Curve" id="Curve_va0c4"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.021834068, 0), 0.0, 0.0, 0, 0, Vector2(0.09825327, 1), 0.0, 0.0, 0, 0, Vector2(0.9170306, 1), 0.0, 0.0, 0, 0, Vector2(0.97598255, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 6
 
-[sub_resource type="Curve2D" id="Curve2D_va0c4"]
+[sub_resource type="Curve2D" id="Curve2D_tt4l0"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 160, 64, 0, 0, 0, 0, 2976, 64)
 }
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_va0c4"]
+[sub_resource type="Curve" id="Curve_mcpt5"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.048034936, 1), 0.0, 0.0, 0, 0, Vector2(0.9541484, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="Curve2D" id="Curve2D_tt4l0"]
+[sub_resource type="Curve2D" id="Curve2D_c5g6j"]
 resource_local_to_scene = true
 bake_interval = 3.0
 _data = {
@@ -57,7 +57,7 @@ tile_map_data = PackedByteArray("AAAKAAcAAAAIAAEAAAALAAcAAAAIAAEAAAAMAAcAAAAIAAE
 tile_set = ExtResource("2_vrnbn")
 
 [node name="Player" parent="." instance=ExtResource("3_qw1hf")]
-position = Vector2(2000, 704)
+position = Vector2(1968, 640)
 
 [node name="Goal" parent="." instance=ExtResource("4_va0c4")]
 position = Vector2(13056, 672)
@@ -73,21 +73,21 @@ curve = SubResource("Curve2D_qw1hf")
 [node name="WavePlatform3" parent="." instance=ExtResource("5_tt4l0")]
 position = Vector2(2032, 720)
 amplitude = 80.0
-amplitude_curve = SubResource("Curve_qw1hf")
+amplitude_curve = SubResource("Curve_va0c4")
 
 [node name="Path2D" parent="WavePlatform3" index="0"]
 position = Vector2(2288, 0)
-curve = SubResource("Curve2D_va0c4")
+curve = SubResource("Curve2D_tt4l0")
 
 [node name="WavePlatform4" parent="." instance=ExtResource("5_tt4l0")]
 position = Vector2(2032, 720)
 wavelength = 800.0
 amplitude = 150.0
-amplitude_curve = SubResource("Curve_va0c4")
+amplitude_curve = SubResource("Curve_mcpt5")
 
 [node name="Path2D" parent="WavePlatform4" index="0"]
 position = Vector2(5840, 0)
-curve = SubResource("Curve2D_tt4l0")
+curve = SubResource("Curve2D_c5g6j")
 
 [editable path="WavePlatform2"]
 [editable path="WavePlatform3"]

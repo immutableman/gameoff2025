@@ -5,6 +5,11 @@ shader_type canvas_item;
 // vec2(0.0, 1.0) scrolls vertically down.
 uniform vec2 scroll_speed = vec2(0.0, 1.0);
 uniform vec2 tiling = vec2(1.0, 1.0);
+varying vec4 modulate; //grab colours after modulate/self-modulate
+
+void vertex(){ //applies to every single vertex
+    modulate = COLOR;
+}
 
 void fragment() {
   // Create a new UV coordinate by adding time-scaled speed to the original UV
@@ -14,5 +19,6 @@ void fragment() {
 
   // Sample the texture at the new, moving coordinate
   // This makes the texture "slide"
-  COLOR = texture(TEXTURE, new_uv);
+  vec4 texture_sample = texture(TEXTURE, new_uv);
+  COLOR = texture_sample * modulate;
 }
