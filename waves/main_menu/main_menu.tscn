@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://8u4b4o80hs0n"]
+[gd_scene load_steps=13 format=3 uid="uid://8u4b4o80hs0n"]
 
 [ext_resource type="Script" uid="uid://f88v3bdewv6q" path="res://main_menu/main_menu.gd" id="1_oa53l"]
 [ext_resource type="Texture2D" uid="uid://q2m1iuprwxvi" path="res://assets/title.png" id="2_3shxk"]
@@ -7,6 +7,25 @@
 [ext_resource type="Script" uid="uid://dpbc61t06mk3o" path="res://main_menu/audio_button.gd" id="5_3f7m4"]
 [ext_resource type="Texture2D" uid="uid://3tbo8e20ilwf" path="res://assets/kenney/ui-pack/musicOn.png" id="6_6tl50"]
 [ext_resource type="Script" uid="uid://coh1q3nvwvmgk" path="res://main_menu/bgm_button.gd" id="7_t6bnd"]
+[ext_resource type="Texture2D" uid="uid://dsbgu1occ5tsx" path="res://assets/player/drop.png" id="8_6at21"]
+[ext_resource type="Script" uid="uid://cswfqsv8puki4" path="res://main_menu/preload.gd" id="8_og6xe"]
+[ext_resource type="Curve" uid="uid://bfuqb0w2htxhh" path="res://player/drop_fade_curve.tres" id="9_og6xe"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_32hag"]
+curve = ExtResource("9_og6xe")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mvfl2"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(30, 0, 0)
+emission_shape = 1
+emission_sphere_radius = 30.0
+initial_velocity_min = 10.0
+initial_velocity_max = 120.0
+gravity = Vector3(0, 200, 0)
+scale_min = 0.19999999
+scale_max = 0.19999999
+alpha_curve = SubResource("CurveTexture_32hag")
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_oa53l")
@@ -71,3 +90,17 @@ offset_bottom = 638.0
 icon = ExtResource("6_6tl50")
 expand_icon = true
 script = ExtResource("7_t6bnd")
+
+[node name="Preload" type="Node" parent="."]
+script = ExtResource("8_og6xe")
+
+[node name="DropsRightVFX" type="GPUParticles2D" parent="Preload"]
+unique_name_in_owner = true
+process_mode = 3
+position = Vector2(-157, 115)
+emitting = false
+texture = ExtResource("8_6at21")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.8
+process_material = SubResource("ParticleProcessMaterial_mvfl2")

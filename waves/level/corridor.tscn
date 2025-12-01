@@ -60,7 +60,7 @@ tile_set = ExtResource("3_g6dq8")
 script = ExtResource("4_yo1ya")
 
 [node name="Player" parent="." instance=ExtResource("4_eagrm")]
-position = Vector2(320, -64)
+position = Vector2(560, 0)
 
 [node name="Goal" parent="." instance=ExtResource("5_b7jvk")]
 position = Vector2(3424, -1376)
@@ -99,7 +99,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(4480, -48)
 
 [node name="Sign" parent="." instance=ExtResource("11_b7jvk")]
-position = Vector2(688, 48)
+position = Vector2(832, 48)
 text = "[b]Ocean[/b]
 100m =>"
 texture = ExtResource("12_b1qnd")

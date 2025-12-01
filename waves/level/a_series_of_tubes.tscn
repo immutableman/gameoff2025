@@ -256,7 +256,8 @@ texture = ExtResource("9_ka5ce")
 position = Vector2(-976, 832)
 
 [node name="Saw2" parent="." instance=ExtResource("13_gwr42")]
-position = Vector2(1152, 160)
+position = Vector2(1152, 192)
+scale = Vector2(0.8, 0.8)
 
 [editable path="WavePlatform"]
 [editable path="WavePlatform2"]
