@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://deqo4hq28h2u5" path="res://assets/kenney/sign_float.png" id="11_eagrm"]
 [ext_resource type="Texture2D" uid="uid://c87sdmd24f81a" path="res://assets/sign_left.tres" id="12_b1qnd"]
 
-[sub_resource type="Curve2D" id="Curve2D_5k4rl"]
+[sub_resource type="Curve2D" id="Curve2D_b7jvk"]
 resource_local_to_scene = true
 bake_interval = 3.0
 _data = {
@@ -21,7 +21,7 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_jgjmt"]
+[sub_resource type="Curve2D" id="Curve2D_b1qnd"]
 resource_local_to_scene = true
 bake_interval = 3.0
 _data = {
@@ -60,7 +60,7 @@ tile_set = ExtResource("3_g6dq8")
 script = ExtResource("4_yo1ya")
 
 [node name="Player" parent="." instance=ExtResource("4_eagrm")]
-position = Vector2(768, -16)
+position = Vector2(320, -64)
 
 [node name="Goal" parent="." instance=ExtResource("5_b7jvk")]
 position = Vector2(3424, -1376)
@@ -72,18 +72,18 @@ amplitude = 700.0
 
 [node name="Path2D" parent="WavePlatform" index="0"]
 position = Vector2(1488, 1200)
-curve = SubResource("Curve2D_5k4rl")
+curve = SubResource("Curve2D_b7jvk")
 
 [node name="WavePlatform2" parent="." instance=ExtResource("6_b1qnd")]
 position = Vector2(-304, -1056)
-speed = -200.0
-wavelength = 125.0
+speed = -201.0
+wavelength = 150.0
 amplitude = 125.0
 offset = 100.0
 
 [node name="Path2D" parent="WavePlatform2" index="0"]
 position = Vector2(3008, 752)
-curve = SubResource("Curve2D_jgjmt")
+curve = SubResource("Curve2D_b1qnd")
 
 [node name="SpringPad4" parent="." instance=ExtResource("7_5k4rl")]
 offset_left = 5040.0
@@ -99,7 +99,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(4480, -48)
 
 [node name="Sign" parent="." instance=ExtResource("11_b7jvk")]
-position = Vector2(480, 48)
+position = Vector2(688, 48)
 text = "[b]Ocean[/b]
 100m =>"
 texture = ExtResource("12_b1qnd")

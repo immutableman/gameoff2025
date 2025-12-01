@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://dlgbxo63gfwag" path="res://main_menu/level_data.gd" id="2_b0aun"]
 [ext_resource type="PackedScene" uid="uid://cfp3rlc0ot0o0" path="res://level/waving_hello.tscn" id="4_ci5qh"]
 [ext_resource type="PackedScene" uid="uid://cvhd5l0upmfud" path="res://level/a_series_of_tubes.tscn" id="5_04tao"]
-[ext_resource type="PackedScene" uid="uid://bkcbh47y8peqx" path="res://level/the_force.tscn" id="5_ci5qh"]
-[ext_resource type="PackedScene" uid="uid://c8mgkejyuprkh" path="res://level/crossing_the_ocean.tscn" id="6_283no"]
+[ext_resource type="PackedScene" uid="uid://ca3ie7n7qrdfp" path="res://level/the_force_GJ.tscn" id="5_ci5qh"]
+[ext_resource type="PackedScene" uid="uid://dr132wchq0etf" path="res://level/crossing_the_ocean_GJ.tscn" id="6_ci5qh"]
 [ext_resource type="PackedScene" uid="uid://dlidl48i6dbip" path="res://level/corridor.tscn" id="7_x8mww"]
 [ext_resource type="AudioStream" uid="uid://bkuk01ly5umiq" path="res://assets/abstractionmusic/Sketchbook 2024-10-14.ogg" id="8_ci5qh"]
 
@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://dlgbxo63gfwag"
 [sub_resource type="Resource" id="Resource_ia84y"]
 script = ExtResource("2_b0aun")
 display_name = "Crossing the Ocean"
-scene = ExtResource("6_283no")
+scene = ExtResource("6_ci5qh")
 metadata/_custom_type_script = "uid://dlgbxo63gfwag"
 
 [sub_resource type="Resource" id="Resource_ci5qh"]
