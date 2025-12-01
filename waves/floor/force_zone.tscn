@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ksu1roi6pr2d"]
+[gd_scene load_steps=6 format=3 uid="uid://ksu1roi6pr2d"]
 
 [ext_resource type="Script" uid="uid://c3lqr2w5kkdss" path="res://floor/force_zone.gd" id="1_i5hkm"]
 [ext_resource type="Material" uid="uid://ctnwjr8071jcc" path="res://floor/scroll_material.tres" id="1_ja70u"]
 [ext_resource type="Texture2D" uid="uid://dfl7fuoo6figg" path="res://assets/Arrow.png" id="2_i5hkm"]
+[ext_resource type="Texture2D" uid="uid://djnutkfs6k1ju" path="res://assets/border.png" id="4_frn0g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5hkm"]
 resource_local_to_scene = true
@@ -27,6 +28,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_i5hkm")
 stretch_mode = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_frn0g")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

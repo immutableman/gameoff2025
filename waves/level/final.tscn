@@ -47,7 +47,8 @@ unique_name_in_owner = true
 position = Vector2(2560, 112.00006)
 rotation = 0.46251225
 text = "well, the real treasure was the friends you ma-
-[i]Oh, shut up[/i]"
+[i]Oh, shut up[/i]
+[b]-THE END- [/b](for now...)"
 
 [node name="FG" type="TileMapLayer" parent="."]
 position = Vector2(-16, -16)
