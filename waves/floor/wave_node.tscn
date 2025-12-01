@@ -25,3 +25,6 @@ gradient = SubResource("Gradient_jpqwq")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-490, -9157, 984, 19255)
