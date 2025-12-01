@@ -12,6 +12,8 @@ var external_forces: Dictionary[Node, Vector2] = {}
 var net_external_force: Vector2 = Vector2.ZERO
 var movers: Array[Node] = []
 
+var _damaged = false
+
 #var _bob_tween: Tween
 
 func _ready() -> void:
@@ -56,6 +58,9 @@ func exit_level_success(endPos: Vector2) -> void:
 
 
 func _on_damaged():
+	if _damaged:
+		return
+	_damaged = true
 	set_deferred('process_mode', Node.PROCESS_MODE_DISABLED)
 	$RigidBody2D.set_deferred('freeze', true)
 	$%EffortVFX.emitting = false
