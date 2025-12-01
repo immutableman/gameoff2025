@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cvhd5l0upmfud"]
+[gd_scene load_steps=21 format=4 uid="uid://cvhd5l0upmfud"]
 
 [ext_resource type="TileSet" uid="uid://btf83bb1gq54v" path="res://floor/level_tileset.tres" id="1_ksh26"]
 [ext_resource type="TileSet" uid="uid://2p6ck3a16vgb" path="res://floor/platform_tileset.tres" id="2_mjgo4"]
@@ -12,22 +12,23 @@
 [ext_resource type="PackedScene" uid="uid://bw4vtclnulclg" path="res://floor/bounce_pad.tscn" id="8_ntych"]
 [ext_resource type="Texture2D" uid="uid://deqo4hq28h2u5" path="res://assets/kenney/sign_float.png" id="9_ka5ce"]
 [ext_resource type="PackedScene" uid="uid://dob0ber15buru" path="res://floor/sign.tscn" id="9_rh6w1"]
+[ext_resource type="PackedScene" uid="uid://bp66wbknaaeu6" path="res://floor/saw.tscn" id="13_gwr42"]
 
-[sub_resource type="Curve2D" id="Curve2D_ntych"]
+[sub_resource type="Curve2D" id="Curve2D_ga7b3"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 320, 112, 0, 0, 0, 0, 1024, -272)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_gwr42"]
+[sub_resource type="Curve2D" id="Curve2D_eeyni"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 464, 48, 0, 0, 0, 0, 1168, -336)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_ka5ce"]
+[sub_resource type="Curve2D" id="Curve2D_kyw4x"]
 resource_local_to_scene = true
 bake_interval = 3.0
 _data = {
@@ -35,11 +36,11 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_i680n"]
+[sub_resource type="Curve" id="Curve_ion17"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.4978166, 0.9966163), 0.0333273, 0.0333273, 0, 0, Vector2(0.95633185, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Curve2D" id="Curve2D_rh6w1"]
+[sub_resource type="Curve2D" id="Curve2D_ilgr8"]
 resource_local_to_scene = true
 bake_interval = 3.0
 _data = {
@@ -47,7 +48,7 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_8rm05"]
+[sub_resource type="Curve2D" id="Curve2D_maduk"]
 resource_local_to_scene = true
 bake_interval = 3.0
 _data = {
@@ -55,7 +56,7 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_i680n"]
+[sub_resource type="Curve2D" id="Curve2D_v7kko"]
 resource_local_to_scene = true
 bake_interval = 3.0
 _data = {
@@ -95,7 +96,7 @@ wavelength = 175.0
 
 [node name="Path2D" parent="WavePlatform" index="0"]
 position = Vector2(-80, -160)
-curve = SubResource("Curve2D_ntych")
+curve = SubResource("Curve2D_ga7b3")
 
 [node name="WavePlatform2" parent="." instance=ExtResource("5_tvnxl")]
 position = Vector2(544, 512)
@@ -104,28 +105,28 @@ offset = 100.0
 
 [node name="Path2D" parent="WavePlatform2" index="0"]
 position = Vector2(-128, -96)
-curve = SubResource("Curve2D_gwr42")
+curve = SubResource("Curve2D_eeyni")
 
 [node name="WavePlatform3" parent="." instance=ExtResource("5_tvnxl")]
 position = Vector2(640, 704)
-speed = -300.0
+speed = -250.0
 wavelength = 175.0
 amplitude = 150.0
 
 [node name="Path2D" parent="WavePlatform3" index="0"]
 position = Vector2(-4464, -16)
-curve = SubResource("Curve2D_ka5ce")
+curve = SubResource("Curve2D_kyw4x")
 
 [node name="WavePlatform4" parent="." instance=ExtResource("5_tvnxl")]
 position = Vector2(640, 704)
 speed = -200.0
 wavelength = 175.0
 amplitude = 10.0
-amplitude_curve = SubResource("Curve_i680n")
+amplitude_curve = SubResource("Curve_ion17")
 
 [node name="Path2D" parent="WavePlatform4" index="0"]
 position = Vector2(-4896, 880)
-curve = SubResource("Curve2D_rh6w1")
+curve = SubResource("Curve2D_ilgr8")
 
 [node name="WavePlatform5" parent="." instance=ExtResource("5_tvnxl")]
 position = Vector2(640, 704)
@@ -135,7 +136,7 @@ amplitude = 30.0
 
 [node name="Path2D" parent="WavePlatform5" index="0"]
 position = Vector2(-5520, 768)
-curve = SubResource("Curve2D_8rm05")
+curve = SubResource("Curve2D_maduk")
 
 [node name="WavePlatform6" parent="." instance=ExtResource("5_tvnxl")]
 position = Vector2(640, 704)
@@ -146,7 +147,7 @@ offset = 80.0
 
 [node name="Path2D" parent="WavePlatform6" index="0"]
 position = Vector2(-5440, 624)
-curve = SubResource("Curve2D_i680n")
+curve = SubResource("Curve2D_v7kko")
 
 [node name="SpringPad" parent="." instance=ExtResource("7_ntych")]
 offset_left = 3080.0
@@ -235,6 +236,9 @@ texture = ExtResource("9_ka5ce")
 position = Vector2(3584, 288)
 rotation = -0.57431614
 texture = ExtResource("9_ka5ce")
+
+[node name="Saw" parent="." instance=ExtResource("13_gwr42")]
+position = Vector2(-976, 832)
 
 [editable path="WavePlatform"]
 [editable path="WavePlatform2"]
