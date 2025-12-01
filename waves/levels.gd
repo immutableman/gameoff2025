@@ -31,11 +31,11 @@ func _on_exit_success() -> void:
 	if next:
 		get_tree().change_scene_to_packed(next.scene)
 	else:
-		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
+		get_tree().change_scene_to_file("res://level/final.tscn")
 
 func get_level_description() -> String:
 	var path = get_tree().current_scene.get_scene_file_path()
 	for data in level_list:
 		if path == data.scene.resource_path:
 			return data.display_name
-	return path
+	return ''
