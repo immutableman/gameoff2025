@@ -232,6 +232,21 @@ texture = ExtResource("9_ka5ce")
 position = Vector2(2528, 208)
 texture = ExtResource("9_ka5ce")
 
+[node name="SignFloat7" type="Sprite2D" parent="."]
+position = Vector2(912, -160)
+rotation = 3.1415927
+texture = ExtResource("9_ka5ce")
+
+[node name="SignFloat8" type="Sprite2D" parent="."]
+position = Vector2(960, -160)
+rotation = 3.1415927
+texture = ExtResource("9_ka5ce")
+
+[node name="SignFloat9" type="Sprite2D" parent="."]
+position = Vector2(1008, -160)
+rotation = 3.1415927
+texture = ExtResource("9_ka5ce")
+
 [node name="SignFloat6" type="Sprite2D" parent="."]
 position = Vector2(3584, 288)
 rotation = -0.57431614
@@ -239,6 +254,9 @@ texture = ExtResource("9_ka5ce")
 
 [node name="Saw" parent="." instance=ExtResource("13_gwr42")]
 position = Vector2(-976, 832)
+
+[node name="Saw2" parent="." instance=ExtResource("13_gwr42")]
+position = Vector2(1152, 160)
 
 [editable path="WavePlatform"]
 [editable path="WavePlatform2"]
